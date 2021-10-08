@@ -1,10 +1,9 @@
 ﻿using AutoMapper;
 using Bug_Management_App.Dtos;
-using Bug_Management_App.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+using System.Web;
 
 namespace Bug_Management_App.Profiles
 {
@@ -12,7 +11,9 @@ namespace Bug_Management_App.Profiles
     {
         public UserProfiles()
         {
-            CreateMap<RegisterUserDto, User>();
+            CreateMap<RegisterUserDto, Users>();
+            CreateMap<Users, RegisterUserDto>();
         }
+        
     }
 }

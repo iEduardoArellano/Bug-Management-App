@@ -2,45 +2,50 @@
 using Bug_Management_App.Data;
 using Bug_Management_App.Dtos;
 using Bug_Management_App.Models;
-using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+using System.Web;
+using System.Web.Mvc;
 
 namespace Bug_Management_App.Controllers
 {
     public class RegisterController : Controller
     {
-        private readonly IMapper _mapper;
-        private readonly IEncrypter _encrypter;
-        private readonly IRegisterUser _registerUser;
+        private readonly IRegisterUsers _registerUsers;
 
-        public RegisterController(IMapper mapper, IEncrypter encrypter, IRegisterUser registerUser)
+        public RegisterController(IRegisterUsers registerUsers)
         {
-            _mapper = mapper;
-            _encrypter = encrypter;
-            _registerUser = registerUser;
+            _registerUsers = registerUsers;
+            
+        }
+
+        public RegisterController()
+        {
+
         }
 
         [HttpPost]
-        public IActionResult Register(RegisterUserDto registerUser)
+        public ActionResult Register(RegisterUserDto user)
         {
+
             if (ModelState.IsValid)
             {
-                registerUser.Password = _encrypter.EncryptPassword(registerUser.Password);
-                var mappedUser = _mapper.Map<User>(registerUser);
+                var mappedRegisterModel = AutoMap._mapper.Map<Users>(user);
 
-                _registerUser.RegisterUser(mappedUser);
+                _registerUsers.RegisterUser(mappedRegisterModel);
 
                 return View();
 
             }
 
-            return View("Privacy");
-
+            return View();
+            
+            
         }
-        public IActionResult Register()
+
+        // GET: Register
+        public ActionResult Register()
         {
             return View();
         }
