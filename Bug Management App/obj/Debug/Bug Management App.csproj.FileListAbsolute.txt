@@ -149,3 +149,7 @@ C:\Users\marom\source\repos\Bug Management App\Bug Management App\bin\Unity.Mvc5
 C:\Users\marom\source\repos\Bug Management App\Bug Management App\bin\System.Threading.Tasks.Extensions.dll
 C:\Users\marom\source\repos\Bug Management App\Bug Management App\bin\Unity.Abstractions.pdb
 C:\Users\marom\source\repos\Bug Management App\Bug Management App\bin\Unity.Container.pdb
+C:\Users\marom\Documents\Trabajo\Repos\Bug-Management-App\Bug Management App\obj\Debug\Bug Management App.csproj.AssemblyReference.cache
+C:\Users\marom\Documents\Trabajo\Repos\Bug-Management-App\Bug Management App\obj\Debug\Bug Management App.csproj.CoreCompileInputs.cache
+C:\Users\marom\Documents\Trabajo\Repos\Bug-Management-App\Bug Management App\obj\Debug\Bug Management App.dll
+C:\Users\marom\Documents\Trabajo\Repos\Bug-Management-App\Bug Management App\obj\Debug\Bug Management App.pdb
