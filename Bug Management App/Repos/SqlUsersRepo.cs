@@ -1,4 +1,4 @@
-﻿using Bug_Management_App.Interfaces;
+﻿using Bug_Management_App.Controllers;
 using Bug_Management_App.Models;
 using System;
 using System.Collections.Generic;
@@ -7,32 +7,20 @@ using System.Web;
 
 namespace Bug_Management_App.Repos
 {
-    public class SqlUsersRepo : IRegisterUsers, IUsers
+    public class SqlUsersRepo : IRegisterUsers
     {
-        private readonly UsersTable _UsersTbl;
-        private readonly ProjectsTable _ProjectsTbl;
+        private readonly UsersDBEntities _usersDB;
 
         public SqlUsersRepo()
         {
-            _UsersTbl = new UsersTable();
-            _ProjectsTbl = new ProjectsTable();
+            _usersDB = new UsersDBEntities();
         }
 
-        public Users GetUserByUserName(string userName)
-        {
-            
-            return _UsersTbl.Users.FirstOrDefault(u => u.UserName == userName);
-        }
-
-        public IEnumerable<Projects> GetProjects()
-        {
-            return _ProjectsTbl.Projects.ToList();
-        }
         public void RegisterUser(Users user)
         {
-            _UsersTbl.Users.Add(user);
+            _usersDB.Users.Add(user);
 
-            _UsersTbl.SaveChanges();
+            _usersDB.SaveChanges();
         }
     }
 }

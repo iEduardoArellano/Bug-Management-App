@@ -149,7 +149,154 @@ C:\Users\marom\source\repos\Bug Management App\Bug Management App\bin\Unity.Mvc5
 C:\Users\marom\source\repos\Bug Management App\Bug Management App\bin\System.Threading.Tasks.Extensions.dll
 C:\Users\marom\source\repos\Bug Management App\Bug Management App\bin\Unity.Abstractions.pdb
 C:\Users\marom\source\repos\Bug Management App\Bug Management App\bin\Unity.Container.pdb
-C:\Users\marom\Documents\Trabajo\Repos\Bug-Management-App\Bug Management App\obj\Debug\Bug Management App.csproj.AssemblyReference.cache
-C:\Users\marom\Documents\Trabajo\Repos\Bug-Management-App\Bug Management App\obj\Debug\Bug Management App.csproj.CoreCompileInputs.cache
-C:\Users\marom\Documents\Trabajo\Repos\Bug-Management-App\Bug Management App\obj\Debug\Bug Management App.dll
-C:\Users\marom\Documents\Trabajo\Repos\Bug-Management-App\Bug Management App\obj\Debug\Bug Management App.pdb
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\obj\Debug\Bug Management App.csproj.AssemblyReference.cache
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\obj\Debug\Bug Management App.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\obj\Debug\Bug Management App.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\obj\Debug\Bug Management App.pdb
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\Bug Management App.dll.config
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\Bug Management App.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\Bug Management App.pdb
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\roslyn\csc.exe
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\roslyn\csc.exe.config
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\roslyn\csc.rsp
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\roslyn\csi.exe
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\roslyn\csi.exe.config
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\roslyn\csi.rsp
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\roslyn\System.AppContext.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\roslyn\System.Console.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\roslyn\System.IO.Compression.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\roslyn\System.Net.Http.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\roslyn\System.Net.Sockets.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\roslyn\System.ValueTuple.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\roslyn\System.Xml.XPath.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\roslyn\vbc.exe
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\roslyn\vbc.exe.config
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\roslyn\vbc.rsp
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\roslyn\VBCSCompiler.exe
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\Antlr3.Runtime.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\AutoMapper.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\EntityFramework.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\EntityFramework.SqlServer.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\Microsoft.Extensions.Options.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\Microsoft.Extensions.Primitives.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\Microsoft.Owin.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\Microsoft.Owin.Security.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\Newtonsoft.Json.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\Owin.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\System.Buffers.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\System.ComponentModel.Annotations.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\System.Memory.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\System.Numerics.Vectors.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\System.Web.Helpers.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\System.Web.Mvc.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\System.Web.Optimization.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\System.Web.Razor.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\System.Web.WebPages.Deployment.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\System.Web.WebPages.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\System.Web.WebPages.Razor.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\Unity.Abstractions.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\Unity.Container.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\Unity.Mvc5.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\WebGrease.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\System.Threading.Tasks.Extensions.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\AutoMapper.xml
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\EntityFramework.xml
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\EntityFramework.SqlServer.xml
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\Microsoft.Extensions.Options.xml
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\Microsoft.Extensions.Primitives.xml
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\System.Buffers.xml
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\System.Memory.xml
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\System.Numerics.Vectors.xml
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\System.Web.Helpers.xml
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\System.Web.Mvc.xml
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\System.Web.Optimization.xml
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\System.Web.Razor.xml
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\System.Web.WebPages.xml
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\System.Web.WebPages.Deployment.xml
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\System.Web.WebPages.Razor.xml
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\Newtonsoft.Json.xml
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\Unity.Abstractions.pdb
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\Unity.Container.pdb
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\Antlr3.Runtime.pdb
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\Microsoft.Owin.xml
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\Microsoft.Owin.Security.xml
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\es\EntityFramework.resources.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\es\EntityFramework.SqlServer.resources.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\es\System.Web.Helpers.resources.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\es\System.Web.Mvc.resources.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\es\System.Web.Optimization.resources.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\es\System.Web.Razor.resources.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\es\System.Web.WebPages.resources.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\es\Microsoft.AspNet.Identity.Core.resources.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\es\Microsoft.AspNet.Identity.Owin.resources.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\es\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\es\Microsoft.Owin.resources.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\es\Microsoft.Owin.Host.SystemWeb.resources.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\es\Microsoft.Owin.Security.resources.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\es\Microsoft.Owin.Security.Facebook.resources.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\es\Microsoft.Owin.Security.Google.resources.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\es\Microsoft.Owin.Security.Twitter.resources.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\obj\Debug\Bug Management App.csproj.CopyComplete

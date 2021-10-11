@@ -211,46 +211,18 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\ProjectsController.cs" />
-    <Compile Include="Models\Projects.cs">
-      <DependentUpon>ProjectsModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ProjectsModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ProjectsModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ProjectsModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ProjectsModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ProjectsModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ProjectsModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Repos\EncrypterRepo.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\LoginController.cs" />
-    <Compile Include="Dtos\LoginUserDto.cs" />
     <Compile Include="Data\AutoMap.cs" />
     <Compile Include="Dtos\RegisterUserDto.cs" />
-    <Compile Include="Interfaces\IEncrypter.cs" />
     <Compile Include="Interfaces\IRegisterUsers.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\IUsers.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Profiles\UserProfiles.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repos\SqlUsersRepo.cs" />
-    <Compile Include="Startup.cs" />
     <Compile Include="Models\Users.cs">
       <DependentUpon>UsersModel.tt</DependentUpon>
     </Compile>
@@ -269,34 +241,39 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UsersModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Profiles\UserProfiles.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repos\SqlUsersRepo.cs" />
+    <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\loginStyle.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\ProjectsModel.Context.tt">
+    <Content Include="Models\UsersModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ProjectsModel.edmx</DependentUpon>
-      <LastGenOutput>ProjectsModel.Context.cs</LastGenOutput>
+      <DependentUpon>UsersModel.edmx</DependentUpon>
+      <LastGenOutput>UsersModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\ProjectsModel.tt">
+    <Content Include="Models\UsersModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ProjectsModel.edmx</DependentUpon>
-      <LastGenOutput>ProjectsModel.cs</LastGenOutput>
+      <DependentUpon>UsersModel.edmx</DependentUpon>
+      <LastGenOutput>UsersModel.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\ProjectsModel.edmx">
+    <EntityDeploy Include="Models\UsersModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ProjectsModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>UsersModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\ProjectsModel.edmx.diagram">
-      <DependentUpon>ProjectsModel.edmx</DependentUpon>
+    <Content Include="Models\UsersModel.edmx.diagram">
+      <DependentUpon>UsersModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -309,16 +286,6 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Models\UsersModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>UsersModel.edmx</DependentUpon>
-      <LastGenOutput>UsersModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\UsersModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>UsersModel.edmx</DependentUpon>
-      <LastGenOutput>UsersModel.cs</LastGenOutput>
-    </Content>
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -339,7 +306,7 @@
     <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
     <Content Include="Views\Account\ForgotPassword.cshtml" />
     <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
-    <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\ResetPassword.cshtml" />
     <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
@@ -353,19 +320,13 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <EntityDeploy Include="Models\UsersModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>UsersModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\UsersModel.edmx.diagram">
-      <DependentUpon>UsersModel.edmx</DependentUpon>
-    </Content>
     <Content Include="Views\Register\Register.cshtml" />
-    <Content Include="Views\Projects\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutLogRe.cshtml" />
+    <Content Include="Views\Register\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Encrypter\" />
+    <Folder Include="App_Themes\Tema1\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
