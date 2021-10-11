@@ -9,11 +9,11 @@ namespace Bug_Management_App.Repos
 {
     public class SqlUsersRepo : IRegisterUsers
     {
-        private readonly UsersDB _usersDB;
+        private readonly UsersDBEntities _usersDB;
 
         public SqlUsersRepo()
         {
-            _usersDB = new UsersDB();
+            _usersDB = new UsersDBEntities();
         }
 
         public void RegisterUser(Users user)
