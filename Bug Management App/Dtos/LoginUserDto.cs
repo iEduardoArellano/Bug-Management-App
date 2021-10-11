@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Bug_Management_App.Controllers
+namespace Bug_Management_App.Dtos
 {
     public class LoginUserDto
     {

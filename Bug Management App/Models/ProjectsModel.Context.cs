@@ -13,10 +13,10 @@ namespace Bug_Management_App.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class UsersTable : DbContext
+    public partial class ProjectsTable : DbContext
     {
-        public UsersTable()
-            : base("name=UsersDB")
+        public ProjectsTable()
+            : base("name=ProjectsTable")
         {
         }
     
@@ -25,6 +25,6 @@ namespace Bug_Management_App.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Users> Users { get; set; }
+        public virtual DbSet<Projects> Projects { get; set; }
     }
 }

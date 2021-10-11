@@ -211,11 +211,32 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ProjectsController.cs" />
+    <Compile Include="Models\Projects.cs">
+      <DependentUpon>ProjectsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProjectsModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProjectsModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProjectsModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProjectsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProjectsModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProjectsModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Repos\EncrypterRepo.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Dtos\LoginUserDto.cs" />
     <Compile Include="Data\AutoMap.cs" />
     <Compile Include="Dtos\RegisterUserDto.cs" />
+    <Compile Include="Interfaces\IEncrypter.cs" />
     <Compile Include="Interfaces\IRegisterUsers.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
@@ -258,8 +279,25 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\ProjectsModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ProjectsModel.edmx</DependentUpon>
+      <LastGenOutput>ProjectsModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ProjectsModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ProjectsModel.edmx</DependentUpon>
+      <LastGenOutput>ProjectsModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\ProjectsModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ProjectsModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ProjectsModel.edmx.diagram">
+      <DependentUpon>ProjectsModel.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -301,7 +339,7 @@
     <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
     <Content Include="Views\Account\ForgotPassword.cshtml" />
     <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\ResetPassword.cshtml" />
     <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
@@ -323,10 +361,11 @@
       <DependentUpon>UsersModel.edmx</DependentUpon>
     </Content>
     <Content Include="Views\Register\Register.cshtml" />
+    <Content Include="Views\Projects\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Login\" />
+    <Folder Include="Views\Encrypter\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
