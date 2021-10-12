@@ -8,7 +8,7 @@ using System.Web;
 
 namespace Bug_Management_App.Repos
 {
-    public class SqlUsersRepo : IRegisterUsers
+    public class SqlUsersRepo : IRegisterUsers, IUsers
     {
         private readonly UsersTbl _users;
         private readonly ProjectsTbl _projects;
@@ -17,6 +17,11 @@ namespace Bug_Management_App.Repos
         {
             _users = new UsersTbl();
             _projects = new ProjectsTbl();
+        }
+
+        public Users GetUserByUserName(string userName)
+        {
+            return _users.Users.FirstOrDefault(u => u.UserName == userName);
         }
 
         public void RegisterUser(Users user)

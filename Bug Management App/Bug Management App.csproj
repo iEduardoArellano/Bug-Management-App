@@ -535,10 +535,13 @@
     <Content Include="Views\Register\Register.cshtml" />
     <Content Include="Views\Shared\_LayoutLogRe.cshtml" />
     <Content Include="Views\Register\_ViewStart.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Projects\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="App_Themes\Tema1\" />
+    <Folder Include="Views\Encrypter\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
