@@ -300,3 +300,4 @@ C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\es\Micr
 C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\es\Microsoft.Owin.Security.Twitter.resources.dll
 C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
 C:\Users\user\Documents\GitHub\Bug-Management-App\Bug Management App\obj\Debug\Bug Management App.csproj.CopyComplete
+C:\Users\marom\Documents\Trabajo\Repos\Bug-Management-App\Bug Management App\obj\Debug\Bug Management App.csproj.CoreCompileInputs.cache

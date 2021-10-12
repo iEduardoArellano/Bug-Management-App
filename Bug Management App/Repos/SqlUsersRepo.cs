@@ -1,4 +1,5 @@
 ﻿using Bug_Management_App.Controllers;
+using Bug_Management_App.Interfaces;
 using Bug_Management_App.Models;
 using System;
 using System.Collections.Generic;
@@ -9,18 +10,20 @@ namespace Bug_Management_App.Repos
 {
     public class SqlUsersRepo : IRegisterUsers
     {
-        private readonly UsersDBEntities _usersDB;
+        private readonly UsersTbl _users;
+        private readonly ProjectsTbl _projects;
 
         public SqlUsersRepo()
         {
-            _usersDB = new UsersDBEntities();
+            _users = new UsersTbl();
+            _projects = new ProjectsTbl();
         }
 
         public void RegisterUser(Users user)
         {
-            _usersDB.Users.Add(user);
+            _users.Users.Add(user);
 
-            _usersDB.SaveChanges();
+            _users.SaveChanges();
         }
     }
 }
