@@ -12,10 +12,12 @@ namespace Bug_Management_App.Controllers
     public class LoginController : Controller
     {
         private readonly IUsers _users;
+        private readonly IEncrypter _encrypter;
 
-        public LoginController(IUsers users)
+        public LoginController(IUsers users, IEncrypter encrypter)
         {
             _users = users;
+            _encrypter = encrypter;
            
         }
 
@@ -25,7 +27,8 @@ namespace Bug_Management_App.Controllers
         {
             if (ModelState.IsValid)
             {
-                var userInDB = _users.GetUserByUserName(loginUser.UserName);
+                loginUser.Password = _encrypter.encryptPassword(loginUser.Password);
+                var userInDB = _users.GetUserAtLogin(loginUser);
                 if (userInDB != null)
                 {
                     FormsAuthentication.SetAuthCookie(loginUser.UserName, true);
@@ -33,7 +36,7 @@ namespace Bug_Management_App.Controllers
                 }
 
             }
-            return RedirectToAction("Index", "Projects");
+            return RedirectToAction("Login", "Login");
         }
 
         [Authorize]
