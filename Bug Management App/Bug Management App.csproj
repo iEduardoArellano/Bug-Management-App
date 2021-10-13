@@ -541,7 +541,7 @@
     <Content Include="Views\Register\_ViewStart.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Projects\Index.cshtml" />
-    <Content Include="Views\Projects\CreateProject.cshtml" />
+    <Content Include="Views\Projects\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

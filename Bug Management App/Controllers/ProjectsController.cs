@@ -20,13 +20,13 @@ namespace Bug_Management_App.Controllers
 
         public ActionResult Create()
         {
-            return View("CreateProject");
+            return View();
         }
 
         [HttpPost]
         public ActionResult Create(CreateProjectDto createProject)
         {
-            return RedirectToAction("CreateProject");
+            return View();
         }
 
         public ActionResult Index()
