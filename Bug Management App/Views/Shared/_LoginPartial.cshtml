@@ -9,7 +9,10 @@
     <li>
         @Html.ActionLink("Hola " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
     </li>
-    <li>@Html.ActionLink("Cerrar Sesión", "Logout", "Login");</li>
+    <li>
+        @Html.ActionLink("Añadir proyecto", "CreateProject", "Projects");
+    </li>
+    <li>@Html.ActionLink("Cerrar sesión", "Logout", "Login");</li>
 </ul>
     }
 }

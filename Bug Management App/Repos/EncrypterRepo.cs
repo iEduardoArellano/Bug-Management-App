@@ -5,9 +5,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Bug_Management_App.Controllers
+namespace Bug_Management_App.Repos
 {
-    public class EncrypterController : IEncrypter
+    public class EncrypterRepo : IEncrypter
     {
         public string encryptPassword(string password)
         {
