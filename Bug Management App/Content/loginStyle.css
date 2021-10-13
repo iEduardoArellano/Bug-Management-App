@@ -13,14 +13,7 @@
 
 body {
     margin: 0;
-    padding: 0;
     color: #6a6f8c;
-    background: #ebebeb;
-    font: 600 12px 'Open Sans',sans-serif;
-}
-
-*, :after, :before {
-    box-sizing: border-box
 }
 
 .clearfix:after, .clearfix:before {
