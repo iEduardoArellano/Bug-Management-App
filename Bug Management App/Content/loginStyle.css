@@ -16,7 +16,7 @@ body {
     padding: 0;
     color: #6a6f8c;
     background: #ebebeb;
-    font: 600 14px/16px 'Open Sans',sans-serif;
+    font: 600 12px 'Open Sans',sans-serif;
 }
 
 *, :after, :before {
@@ -53,7 +53,7 @@ a {
 .login-html {
     width: 100%;
     height: 100%;
-    padding: 30px 60px;
+    padding: 20px 40px;
 }
 
     .login-html .sign-in-htm,
@@ -75,7 +75,7 @@ a {
     }
 
     .login-html .tab,
-    .login-form .group .label,
+    .login-form .group .login-label,
     .login-form .group .button {
         text-transform: uppercase;
     }
@@ -107,20 +107,23 @@ div.a {
 .login-form {
     height: 345px;
     position: relative;
-    perspective: 1000px;
-    transform-style: preserve-3d;
+    font-size: 12px;
 }
 
     .login-form .group {
-        margin-bottom: 15px;
+        margin-right: -15px;
+        margin-left: -15px;
+        font-size: 12px;
     }
 
-        .login-form .group .label,
+        .login-form .group .login-label,
         .login-form .group .input,
         .login-form .group .button {
             width: 100%;
             color: #fff;
             display: block;
+            
+           
         }
 
         .login-form .group .input,
@@ -128,8 +131,8 @@ div.a {
             font-size: 12px;
             height: auto;
             border: none;
-            padding: 10px;
-            border-radius: 10px;
+            padding: 8px 8px;
+            border-radius: 5px;
             background: rgba(255,255,255,.1);
         }
 
@@ -138,22 +141,25 @@ div.a {
             -webkit-text-security: circle;
         }*/
 
-        .login-form .group .label {
+        .login-form .group .login-label {
             color: #aaa;
+            font-size: 10px;
+            padding-top: 7px;
+            margin-bottom: 2px;
+            text-align: left;
+        }
+
+        .login-form .group .button {
+            background: #1161ee;
             font-size: 12px;
         }
 
         .login-form .group .button {
             background: #1161ee;
-            font-size: 14px;
+            font-size: 12px;
         }
 
-        .login-form .group .button {
-            background: #1161ee;
-            font-size: 14px;
-        }
-
-        .login-form .group label .icon {
+        .login-form .group login-label .icon {
             width: 15px;
             height: 15px;
             border-radius: 2px;
@@ -162,8 +168,8 @@ div.a {
             background: rgba(255,255,255,.1);
         }
 
-            .login-form .group label .icon:before,
-            .login-form .group label .icon:after {
+            .login-form .group login-label .icon:before,
+            .login-form .group login-label .icon:after {
                 content: '';
                 width: 10px;
                 height: 2px;
@@ -172,32 +178,32 @@ div.a {
                 transition: all .2s ease-in-out 0s;
             }
 
-            .login-form .group label .icon:before {
+            .login-form .group login-label .icon:before {
                 left: 3px;
                 width: 5px;
                 bottom: 6px;
                 transform: scale(0) rotate(0);
             }
 
-            .login-form .group label .icon:after {
+            .login-form .group login-label .icon:after {
                 top: 6px;
                 right: 0;
                 transform: scale(0) rotate(0);
             }
 
-        .login-form .group .check:checked + label {
+        .login-form .group .check:checked + login-label {
             color: #fff;
         }
 
-            .login-form .group .check:checked + label .icon {
+            .login-form .group .check:checked + login-label .icon {
                 background: #1161ee;
             }
 
-                .login-form .group .check:checked + label .icon:before {
+                .login-form .group .check:checked + login-label .icon:before {
                     transform: scale(1) rotate(45deg);
                 }
 
-                .login-form .group .check:checked + label .icon:after {
+                .login-form .group .check:checked + login-label .icon:after {
                     transform: scale(1) rotate(-45deg);
                 }
 
