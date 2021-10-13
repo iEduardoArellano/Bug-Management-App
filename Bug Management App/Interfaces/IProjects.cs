@@ -10,5 +10,7 @@ namespace Bug_Management_App.Interfaces
     public interface IProjects
     {
         IEnumerable<Projects> GetProjectsInDb();
+
+        void CreateProject(Projects projectToCreate);
     }
 }

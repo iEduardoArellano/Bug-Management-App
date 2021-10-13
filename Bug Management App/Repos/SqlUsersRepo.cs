@@ -44,5 +44,12 @@ namespace Bug_Management_App.Repos
             
             return _users.Users.FirstOrDefault(u => u.UserName == loginUser.UserName && u.Password == loginUser.Password);
         }
+
+        public void CreateProject(Projects projectToCreate)
+        {
+            _projects.Projects.Add(projectToCreate);
+
+            _projects.SaveChanges();
+        }
     }
 }
