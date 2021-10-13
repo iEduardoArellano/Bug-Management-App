@@ -24,9 +24,18 @@ namespace Bug_Management_App.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(CreateProjectDto createProject)
+        public ActionResult Create(CreateProjectDto createProject, HttpPostedFileBase imageLogo)
         {
-            return View();
+            if (ModelState.IsValid)
+            {
+                if (imageLogo != null)
+                {
+                    createProject.Logo = new byte[imageLogo.ContentLength];
+                    imageLogo.InputStream.Read(createProject.Logo, 0 ,imageLogo.ContentLength);
+                }
+                return View(createProject);
+            }
+            return View(createProject);
         }
 
         public ActionResult Index()
