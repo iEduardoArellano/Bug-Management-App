@@ -1,4 +1,4 @@
-using Bug_Management_App.Controllers;
+using Bug_Management_App.Interfaces;
 using Bug_Management_App.Repos;
 using System.Web.Mvc;
 using Unity;
@@ -18,7 +18,10 @@ namespace Bug_Management_App
             // e.g. container.RegisterType<ITestService, TestService>();
 
             container.RegisterType<IRegisterUsers, SqlUsersRepo>();
-            
+            container.RegisterType<IUsers, SqlUsersRepo>();
+            container.RegisterType<IProjects, SqlUsersRepo>();
+            container.RegisterType<IEncrypter, EncrypterRepo>();
+
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }
     }

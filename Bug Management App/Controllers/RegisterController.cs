@@ -1,6 +1,6 @@
-﻿using AutoMapper;
-using Bug_Management_App.Data;
+﻿using Bug_Management_App.Data;
 using Bug_Management_App.Dtos;
+using Bug_Management_App.Interfaces;
 using Bug_Management_App.Models;
 using System;
 using System.Collections.Generic;
@@ -13,10 +13,12 @@ namespace Bug_Management_App.Controllers
     public class RegisterController : Controller
     {
         private readonly IRegisterUsers _registerUsers;
+        private readonly IEncrypter _encrypter;
 
-        public RegisterController(IRegisterUsers registerUsers)
+        public RegisterController(IRegisterUsers registerUsers, IEncrypter encrypter)
         {
             _registerUsers = registerUsers;
+            _encrypter = encrypter;
             
         }
 
@@ -31,6 +33,7 @@ namespace Bug_Management_App.Controllers
 
             if (ModelState.IsValid)
             {
+                user.Password = _encrypter.encryptPassword(user.Password);
                 var mappedRegisterModel = AutoMap._mapper.Map<Users>(user);
 
                 _registerUsers.RegisterUser(mappedRegisterModel);

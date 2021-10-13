@@ -1,6 +1,6 @@
 ﻿using Bug_Management_App.Models;
 
-namespace Bug_Management_App.Controllers
+namespace Bug_Management_App.Interfaces
 {
     public interface IRegisterUsers
     {

@@ -25,7 +25,7 @@ namespace Bug_Management_App
             app.UseCookieAuthentication(new CookieAuthenticationOptions
             {
                 AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
-                LoginPath = new PathString("/Account/Login"),
+                LoginPath = new PathString("/Login"),
                 Provider = new CookieAuthenticationProvider
                 {
                     // Permite a la aplicación validar la marca de seguridad cuando el usuario inicia sesión.

@@ -13,10 +13,10 @@ namespace Bug_Management_App.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class UsersDBEntities : DbContext
+    public partial class UsersTbl : DbContext
     {
-        public UsersDBEntities()
-            : base("name=UsersDBEntities")
+        public UsersTbl()
+            : base("name=UsersTbl")
         {
         }
     
