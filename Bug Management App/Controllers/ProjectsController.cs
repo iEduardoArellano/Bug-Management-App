@@ -13,7 +13,7 @@ namespace Bug_Management_App.Controllers
     [Authorize]
     public class ProjectsController : Controller
     {
-        private IProjects _projects;
+        private readonly IProjects _projects;
 
         public ProjectsController(IProjects projects)
         {

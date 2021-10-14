@@ -8,6 +8,6 @@ namespace Bug_Management_App.Interfaces
 {
     public interface IEncrypter
     {
-        string encryptPassword(string password);
+        string EncryptPassword(string password);
     }
 }
