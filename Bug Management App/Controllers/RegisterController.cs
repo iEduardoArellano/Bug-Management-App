@@ -38,13 +38,11 @@ namespace Bug_Management_App.Controllers
 
                 _registerUsers.RegisterUser(mappedRegisterModel);
 
-                return View();
+                return RedirectToAction("Login", "Login");
 
             }
 
             return View();
-            
-            
         }
 
         // GET: Register
