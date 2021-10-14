@@ -33,7 +33,7 @@ namespace Bug_Management_App.Controllers
 
             if (ModelState.IsValid)
             {
-                user.Password = _encrypter.encryptPassword(user.Password);
+                user.Password = _encrypter.EncryptPassword(user.Password);
                 var mappedRegisterModel = AutoMap._mapper.Map<Users>(user);
 
                 _registerUsers.RegisterUser(mappedRegisterModel);

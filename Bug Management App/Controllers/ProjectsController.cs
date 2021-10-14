@@ -50,21 +50,24 @@ namespace Bug_Management_App.Controllers
         public ActionResult Index()
         {
             List<Projects> projects =_projects.GetProjectsInDb().ToList();
+            List<string> imagesData = new List<string>();
+
             foreach (var i in projects)
             {
-                i.Logo = this.ConvertImage(Convert.ToBase64String(i.Logo));
+                imagesData.Add(setImageData(i.Logo));
             }
 
+            ViewBag.ImagesData = imagesData;
             return View(projects);
         }
 
-        private byte[] ConvertImage(string imageBase64)
+        public string setImageData(byte[] bytesImage)
         {
-            byte[] bytes;
+            string base64Image = Convert.ToBase64String(bytesImage);
 
-            bytes = Convert.FromBase64String(imageBase64);
-
-            return bytes;
+            return string.Format("data:image/png;base64,{0}", base64Image);
         }
+
+        
     }
 }
