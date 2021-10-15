@@ -68,7 +68,6 @@ namespace Bug_Management_App.Controllers
             return View(project);
         }
 
-
         public string setImageData(byte[] bytesImage)
         {
             string base64Image = Convert.ToBase64String(bytesImage);

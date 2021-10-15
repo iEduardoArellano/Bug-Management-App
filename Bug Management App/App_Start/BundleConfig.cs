@@ -23,8 +23,8 @@ namespace Bug_Management_App
                       "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                "~/Content/PrincipalStyle",
                          "~/Content/Site.css",
+                         "~/Content/PrincipalStyle.css",
                        "~/Content/bootstrap.css"));
 
             bundles.Add(new StyleBundle("~/ContentViews/css").Include(

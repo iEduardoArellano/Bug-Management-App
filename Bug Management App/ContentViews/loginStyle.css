@@ -39,7 +39,7 @@ a {
     max-width: 525px;
     min-height: 670px;
     position: relative;
-    background: #222222;
+    background: #343a40;
     box-shadow: 5px 8px 8px #686868;
     position: relative;
 }
@@ -85,7 +85,7 @@ a {
 
     .login-html .title {
         color: #fff;
-        font: 600 24px "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font: 400 24px "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
 
 div.a {

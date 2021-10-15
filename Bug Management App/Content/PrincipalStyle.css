@@ -1,5 +1,34 @@
 ﻿body {
 }
-.container .table .thead-style{
-    background-color: #c8c8c8;
+.brand-style {
+    float: left;
+    height: 50px;
+    padding: 11px 15px;
+    color: #ffffff;
+    font: 400 24px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    pointer-events: none;
+    cursor: default;
+}
+.thead-style{
+    background-color: #d8d8d8;
+}
+.nav-style {
+    background-color: #343a40;
+   color: #ffffff;
+}
+.nav-elements {
+    font: 500 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #9eaaaa;
+}
+.filters-style{
+    margin: 10px 0px;
+    padding: 15px;
+}
+.table-style {
+    
+}
+.add-style {
+    background-color: #1161ee;
+    color: #ffffff;
+    font: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
