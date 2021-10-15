@@ -51,5 +51,10 @@ namespace Bug_Management_App.Repos
 
             _projects.SaveChanges();
         }
+
+        public Projects FindProjectById(int projectId)
+        {
+            return _projects.Projects.FirstOrDefault(p => p.ProjectId == projectId);
+        }
     }
 }

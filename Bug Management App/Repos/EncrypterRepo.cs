@@ -9,7 +9,7 @@ namespace Bug_Management_App.Repos
 {
     public class EncrypterRepo : IEncrypter
     {
-        public string encryptPassword(string password)
+        public string EncryptPassword(string password)
         {
             string result;
 

@@ -13,7 +13,7 @@ namespace Bug_Management_App.Profiles
         public UserProfiles()
         {
             CreateMap<RegisterUserDto, Users>();
-            CreateMap<CreateProjectDto, Users>();
+            CreateMap<CreateProjectDto, Projects>();
 
         }
         

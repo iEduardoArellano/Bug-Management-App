@@ -28,23 +28,22 @@ namespace Bug_Management_App.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Register(RegisterUserDto user)
         {
 
             if (ModelState.IsValid)
             {
-                user.Password = _encrypter.encryptPassword(user.Password);
+                user.Password = _encrypter.EncryptPassword(user.Password);
                 var mappedRegisterModel = AutoMap._mapper.Map<Users>(user);
 
                 _registerUsers.RegisterUser(mappedRegisterModel);
 
-                return View();
+                return RedirectToAction("Login", "Login");
 
             }
 
             return View();
-            
-            
         }
 
         // GET: Register

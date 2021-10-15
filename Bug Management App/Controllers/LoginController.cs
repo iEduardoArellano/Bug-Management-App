@@ -27,7 +27,7 @@ namespace Bug_Management_App.Controllers
         {
             if (ModelState.IsValid)
             {
-                loginUser.Password = _encrypter.encryptPassword(loginUser.Password);
+                loginUser.Password = _encrypter.EncryptPassword(loginUser.Password);
                 var userInDB = _users.GetUserAtLogin(loginUser);
                 if (userInDB != null)
                 {

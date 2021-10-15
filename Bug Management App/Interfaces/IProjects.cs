@@ -12,5 +12,7 @@ namespace Bug_Management_App.Interfaces
         IEnumerable<Projects> GetProjectsInDb();
 
         void CreateProject(Projects projectToCreate);
+
+        Projects FindProjectById(int projectId);
     }
 }
