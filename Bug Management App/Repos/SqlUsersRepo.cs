@@ -59,7 +59,7 @@ namespace Bug_Management_App.Repos
 
         public void UpdateProject(Projects projectToUpdate)
         {
-            _projects.Projects.Update(projectToUpdate);
+           // _projects.Projects.Update(projectToUpdate);
         }
     }
 }
