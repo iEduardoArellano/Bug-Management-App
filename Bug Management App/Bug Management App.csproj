@@ -411,11 +411,13 @@
     <Content Include="bin\Unity.Container.pdb" />
     <Content Include="bin\Unity.Mvc5.dll" />
     <Content Include="bin\WebGrease.dll" />
+    <Content Include="ContentViews\bootstrap.css" />
+    <Content Include="ContentViews\loginStyle.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\loginStyle.css" />
+    <Content Include="Content\PrincipalStyle.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -542,6 +544,9 @@
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Projects\Index.cshtml" />
     <Content Include="Views\Projects\Create.cshtml" />
+    <Content Include="Views\Login\_ViewStart.cshtml" />
+    <Content Include="Views\Projects\_ViewStart.cshtml" />
+    <Content Include="Views\Projects\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
