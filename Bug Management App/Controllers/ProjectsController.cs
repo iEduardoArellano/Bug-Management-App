@@ -20,12 +20,23 @@ namespace Bug_Management_App.Controllers
             _projects = projects;
         }
 
-        public ActionResult Create()
+        //[HttpGet]
+        public ActionResult Index()
         {
-            return View();
+            List<Projects> projects = _projects.GetProjectsInDb().ToList();
+            List<string> imagesData = new List<string>();
+
+            foreach (var i in projects)
+            {
+                imagesData.Add(setImageData(i.Logo));
+            }
+
+            ViewBag.ImagesData = imagesData;
+            return View(projects);
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(CreateProjectDto createProject, HttpPostedFileBase imageLogo)
         {
             if (ModelState.IsValid)
@@ -45,21 +56,18 @@ namespace Bug_Management_App.Controllers
             return View();
         }
 
-        
-        //[HttpGet]
-        public ActionResult Index()
+        public ActionResult Create()
         {
-            List<Projects> projects =_projects.GetProjectsInDb().ToList();
-            List<string> imagesData = new List<string>();
-
-            foreach (var i in projects)
-            {
-                imagesData.Add(setImageData(i.Logo));
-            }
-
-            ViewBag.ImagesData = imagesData;
-            return View(projects);
+            return View();
         }
+
+        public ActionResult Edit(int projectId)
+        {
+            var project = _projects.FindProjectById(projectId);
+
+            return View(project);
+        }
+
 
         public string setImageData(byte[] bytesImage)
         {

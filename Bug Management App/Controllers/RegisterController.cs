@@ -28,6 +28,7 @@ namespace Bug_Management_App.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Register(RegisterUserDto user)
         {
 
