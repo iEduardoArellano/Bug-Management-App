@@ -7,6 +7,7 @@ namespace Bug_Management_App.Dtos
 {
     public class CreateProjectDto
     {
+        public string ProjectName { get; set; }
         public string CompanyName { get; set; }
         public byte[] Logo { get; set; }
         public string ProjectManager { get; set; }

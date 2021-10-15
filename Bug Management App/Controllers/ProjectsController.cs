@@ -63,19 +63,17 @@ namespace Bug_Management_App.Controllers
 
         public ActionResult Edit(int projectId)
         {
-            Projects project = _projects.FindProjectById(projectId);
+            var project = _projects.FindProjectById(projectId);
 
             return View(project);
         }
 
-        public ActionResult Edit(Projects project)
+        public ActionResult Delete(int projectId)
         {
-            if (ModelState.IsValid)
-            {
-                
-            }
-        }
+            _projects.DeleteProject(projectId);
 
+            return RedirectToAction("Index");
+        }
 
         public string setImageData(byte[] bytesImage)
         {

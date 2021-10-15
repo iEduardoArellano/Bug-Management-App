@@ -45,6 +45,7 @@ namespace Bug_Management_App.Repos
             return _users.Users.FirstOrDefault(u => u.UserName == loginUser.UserName && u.Password == loginUser.Password);
         }
 
+
         public void CreateProject(Projects projectToCreate)
         {
             _projects.Projects.Add(projectToCreate);
@@ -57,9 +58,10 @@ namespace Bug_Management_App.Repos
             return _projects.Projects.FirstOrDefault(p => p.ProjectId == projectId);
         }
 
-        public void UpdateProject(Projects projectToUpdate)
+        public void DeleteProject(int projectId)
         {
-           // _projects.Projects.Update(projectToUpdate);
+            var projectToDelete = FindProjectById(projectId);
+            _projects.Projects.Remove(projectToDelete);
         }
     }
 }

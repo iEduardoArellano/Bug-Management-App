@@ -15,6 +15,6 @@ namespace Bug_Management_App.Interfaces
 
         Projects FindProjectById(int projectId);
 
-        void UpdateProject(Projects projectToUpdate);
+        void DeleteProject(int projectId);
     }
 }
