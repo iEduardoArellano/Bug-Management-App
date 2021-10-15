@@ -56,5 +56,10 @@ namespace Bug_Management_App.Repos
         {
             return _projects.Projects.FirstOrDefault(p => p.ProjectId == projectId);
         }
+
+        public void UpdateProject(Projects projectToUpdate)
+        {
+            _projects.Projects.Update(projectToUpdate);
+        }
     }
 }

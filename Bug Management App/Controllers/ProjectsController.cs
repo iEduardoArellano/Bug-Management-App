@@ -63,9 +63,17 @@ namespace Bug_Management_App.Controllers
 
         public ActionResult Edit(int projectId)
         {
-            var project = _projects.FindProjectById(projectId);
+            Projects project = _projects.FindProjectById(projectId);
 
             return View(project);
+        }
+
+        public ActionResult Edit(Projects project)
+        {
+            if (ModelState.IsValid)
+            {
+                
+            }
         }
 
 
