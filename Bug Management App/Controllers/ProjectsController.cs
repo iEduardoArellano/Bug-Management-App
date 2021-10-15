@@ -49,6 +49,7 @@ namespace Bug_Management_App.Controllers
 
                 var mappedCreateProject = AutoMap._mapper.Map<Projects>(createProject);
                 _projects.CreateProject(mappedCreateProject);
+                _projects.SaveProjectsChanges();
 
                 return RedirectToAction("Index");
             }
@@ -61,9 +62,9 @@ namespace Bug_Management_App.Controllers
             return View();
         }
 
-        public ActionResult Edit(int projectId)
+        public ActionResult Edit(Projects projectToEdit)
         {
-            var project = _projects.FindProjectById(projectId);
+            var project = _projects.FindProjectById(projectToEdit.ProjectId);
 
             return View(project);
         }
@@ -71,6 +72,7 @@ namespace Bug_Management_App.Controllers
         public ActionResult Delete(int projectId)
         {
             _projects.DeleteProject(projectId);
+            _projects.SaveProjectsChanges();
 
             return RedirectToAction("Index");
         }

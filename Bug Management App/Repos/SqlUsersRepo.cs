@@ -31,7 +31,7 @@ namespace Bug_Management_App.Repos
         {
             _users.Users.Add(user);
 
-            _users.SaveChanges();
+            
         }
 
         public IEnumerable<Projects> GetProjectsInDb()
@@ -50,7 +50,7 @@ namespace Bug_Management_App.Repos
         {
             _projects.Projects.Add(projectToCreate);
 
-            _projects.SaveChanges();
+            
         }
 
         public Projects FindProjectById(int projectId)
@@ -63,5 +63,17 @@ namespace Bug_Management_App.Repos
             var projectToDelete = FindProjectById(projectId);
             _projects.Projects.Remove(projectToDelete);
         }
+
+
+        public void SaveChanges()
+        {
+            _users.SaveChanges();
+        }
+
+        public void SaveProjectsChanges()
+        {
+            _projects.SaveChanges();
+        }
+
     }
 }

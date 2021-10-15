@@ -39,6 +39,8 @@ namespace Bug_Management_App.Controllers
 
                 _registerUsers.RegisterUser(mappedRegisterModel);
 
+                _registerUsers.SaveChanges();
+
                 return RedirectToAction("Login", "Login");
 
             }
