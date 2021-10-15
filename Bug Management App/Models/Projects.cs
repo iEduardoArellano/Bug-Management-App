@@ -19,5 +19,6 @@ namespace Bug_Management_App.Models
         public byte[] Logo { get; set; }
         public string ProjectManager { get; set; }
         public string Status { get; set; }
+        public string ProjectName { get; set; }
     }
 }

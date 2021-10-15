@@ -3,33 +3,56 @@
     ViewBag.Title = "Index";
 }
 
-<div>
-    <h1>HOLA!</h1>
-</div>
-<table>
-    <tr>
-        <td>Compañia </td>
-        <td>Logo</td>
-        <td>Project Manager</td>
-        <td>Status</td>
-    </tr>
 
-    @foreach (var item in Model.Select((value, index) => new { value, index }))
-    {
+<ul class="nav nav-tabs  ">
+    <li class="nav-item">
+        <a class="nav-link" href="#">Filtro</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Filtro2</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Filtro</a>
+    </li>
+    <li class="nav-item navbar-right ">
+        @Html.ActionLink("Agregrar proyecto", "Create", "Projects")
+    </li>
+</ul>
+<div class ="container">
+    
+    <table class="table table-hover">
+        <thead class="thead-style">
+            <tr>
+                <td>Compañia</td>
+                <td>Logo</td>
+                <td>Project Manager</td>
+                <td>Status</td>
+            </tr>
+        </thead>
+       
+
+        @foreach (var item in Model.Select((value, index) => new { value, index }))
+        {
+    <tbody>
         <tr>
+        
             <td>@item.value.CompanyName</td>
-        </tr>
-        <tr> s
+        
             <td><img src="@ViewBag.ImagesData[item.index]" width="50" height="50" /></td>
-        </tr>
-        <tr>
+        
             <td>@item.value.ProjectManager</td>
-        </tr>
-        <tr>
+        
             <td>@item.value.Status</td>
+            <td> @Html.ActionLink("Editar proyecto", "Edit", "Projects", new { projectId = item.value.ProjectId }, null)</td>
+        
         </tr>
-    }
-</table>
+
+    </tbody>
+           
+        }
+    </table>
+</div>
+
 
 
 
