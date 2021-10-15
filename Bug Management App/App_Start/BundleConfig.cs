@@ -22,11 +22,14 @@ namespace Bug_Management_App
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js"));
 
-         
-
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                       "~/Content/loginStyle.css",
-                     "~/Content/bootstrap.css"));
+                         "~/Content/Site.css",
+                       "~/Content/bootstrap.css",
+                       "~/Content/PrincipalStyle"));
+
+            bundles.Add(new StyleBundle("~/ContentViews/css").Include(
+                       "~/ContentViews/loginStyle.css",
+                     "~/ContentViews/bootstrap.css"));
 
         }
     }
