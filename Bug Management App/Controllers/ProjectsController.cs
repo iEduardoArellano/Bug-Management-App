@@ -68,6 +68,12 @@ namespace Bug_Management_App.Controllers
             return View(project);
         }
 
+        public ActionResult Delete(int projectId)
+        {
+            _projects.DeleteProject(projectId);
+
+            return RedirectToAction("Index");
+        }
 
         public string setImageData(byte[] bytesImage)
         {
