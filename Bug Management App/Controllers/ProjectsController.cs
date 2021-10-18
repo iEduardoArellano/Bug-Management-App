@@ -28,7 +28,7 @@ namespace Bug_Management_App.Controllers
 
             foreach (var i in projects)
             {
-                imagesData.Add(setImageData(i.Logo));
+                imagesData.Add(SetImageData(i.Logo));
             }
 
             ViewBag.ImagesData = imagesData;
@@ -49,6 +49,7 @@ namespace Bug_Management_App.Controllers
 
                 var mappedCreateProject = AutoMap._mapper.Map<Projects>(createProject);
                 _projects.CreateProject(mappedCreateProject);
+                _projects.SaveProjectsChanges();
 
                 return RedirectToAction("Index");
             }
@@ -61,14 +62,48 @@ namespace Bug_Management_App.Controllers
             return View();
         }
 
-        public ActionResult Edit(int projectId)
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(Projects editedProject, HttpPostedFileBase imageLogo)
         {
-            var project = _projects.FindProjectById(projectId);
+            var project = _projects.FindProjectById(editedProject.ProjectId);
+            if (ModelState.IsValid)
+            {
+                if (imageLogo != null)
+                {
+                    editedProject.Logo = new byte[imageLogo.ContentLength];
+                    imageLogo.InputStream.Read(editedProject.Logo, 0, imageLogo.ContentLength);
+                    project.Logo = editedProject.Logo;
+                }
+                project.ProjectName = editedProject.ProjectName;
+                project.CompanyName = editedProject.CompanyName;
+                project.ProjectManager = editedProject.ProjectManager;
+                project.Status = editedProject.Status;
+            }
+            
+            _projects.SaveProjectsChanges();
 
-            return View(project);
+            return RedirectToAction("Index");
         }
 
-        public string setImageData(byte[] bytesImage)
+        public ActionResult SendProjecToEdit(int projectId)
+        {
+             var project = _projects.FindProjectById(projectId);
+             ViewBag.ImageData = SetImageData(project.Logo);
+            //return RedirectToRoute("Edit", project);
+
+            return View("Edit", project);
+        }
+
+        public ActionResult Delete(int projectId)
+        {
+            _projects.DeleteProject(projectId);
+            _projects.SaveProjectsChanges();
+
+            return RedirectToAction("Index");
+        }
+
+        private string SetImageData(byte[] bytesImage)
         {
             string base64Image = Convert.ToBase64String(bytesImage);
 

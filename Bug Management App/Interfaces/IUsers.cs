@@ -13,5 +13,7 @@ namespace Bug_Management_App.Interfaces
         Users GetUserByUserName(string userName);
 
         Users GetUserAtLogin(LoginUserDto loginUser);
+
+        void SaveChanges();
     }
 }

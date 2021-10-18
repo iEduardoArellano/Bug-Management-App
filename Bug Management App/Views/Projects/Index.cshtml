@@ -2,63 +2,53 @@
 @{
     ViewBag.Title = "Index";
 }
-<head>
+
+
+<ul class="nav nav-tabs  ">
+    <li class="nav-item">
+        <a class="nav-link" href="#">Filtro</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Filtro2</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Filtro</a>
+    </li>
+    <li class="nav-item navbar-right ">
+        @Html.ActionLink("Agregrar proyecto", "Create", "Projects")
+    </li>
+</ul>
+<div class ="container">
     
-</head>
-
-
-<div class="container">
-    <ul class="nav nav-tabs filters-style ">
-        <li class="nav-item">
-            <a class="nav-link" href="#">Filtro</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Filtro2</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Filtro</a>
-        </li>
-        <li class="nav-item navbar-right ">
-            @Html.ActionLink("Agregrar proyecto", "Create", "Projects", new { @class = "add-style"})
-        </li>
-    </ul>
     <table class="table table-hover">
-
         <thead class="thead-style">
             <tr>
-                <td>Nombre del proyecto</td>
-                <td>Logo</td>
                 <td>Compañia</td>
+                <td>Logo</td>
                 <td>Project Manager</td>
                 <td>Status</td>
-                <td></td>
-                <td></td>
             </tr>
         </thead>
-
+       
 
         @foreach (var item in Model.Select((value, index) => new { value, index }))
         {
-            <tbody>
-                <tr>
-                    <td>@item.value.ProjectName</td>
+    <tbody>
+        <tr>
+        
+            <td>@item.value.CompanyName</td>
+        
+            <td><img src="@ViewBag.ImagesData[item.index]" width="50" height="50" /></td>
+        
+            <td>@item.value.ProjectManager</td>
+        
+            <td>@item.value.Status</td>
+            <td> @Html.ActionLink("Editar proyecto", "SendProjecToEdit", "Projects", new { projectId = item.value.ProjectId }, null)</td>
+        
+        </tr>
 
-                    <td><img src="@ViewBag.ImagesData[item.index]" width="50" height="50" /></td>
-
-                    <td>@item.value.CompanyName</td>
-
-                    <td>@item.value.ProjectManager</td>
-
-                    <td>@item.value.Status</td>
-
-                    <td> @Html.ActionLink("Editar proyecto", "Edit", "Projects", new { projectId = item.value.ProjectId }, null)</td>
-
-                    <td> @Html.ActionLink("Eliminar", "Delete", "Projects")</td>
-
-                </tr>
-
-            </tbody>
-
+    </tbody>
+           
         }
     </table>
 </div>
