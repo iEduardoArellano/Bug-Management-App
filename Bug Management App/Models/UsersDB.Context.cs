@@ -13,10 +13,10 @@ namespace Bug_Management_App.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ProjectsTbl : DbContext
+    public partial class UsersDBEntities : DbContext
     {
-        public ProjectsTbl()
-            : base("name=ProjectsTbl")
+        public UsersDBEntities()
+            : base("name=UsersDBEntities")
         {
         }
     
@@ -26,5 +26,7 @@ namespace Bug_Management_App.Models
         }
     
         public virtual DbSet<Projects> Projects { get; set; }
+        public virtual DbSet<Roles> Roles { get; set; }
+        public virtual DbSet<Users> Users { get; set; }
     }
 }

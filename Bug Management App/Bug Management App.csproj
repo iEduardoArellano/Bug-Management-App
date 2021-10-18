@@ -233,40 +233,28 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Projects.cs">
-      <DependentUpon>ProjectsModel.tt</DependentUpon>
+      <DependentUpon>UsersDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ProjectsModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ProjectsModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ProjectsModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ProjectsModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ProjectsModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ProjectsModel.edmx</DependentUpon>
+    <Compile Include="Models\Roles.cs">
+      <DependentUpon>UsersDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Users.cs">
-      <DependentUpon>UsersModel.tt</DependentUpon>
+      <DependentUpon>UsersDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\UsersModel.Context.cs">
+    <Compile Include="Models\UsersDB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>UsersModel.Context.tt</DependentUpon>
+      <DependentUpon>UsersDB.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\UsersModel.cs">
+    <Compile Include="Models\UsersDB.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>UsersModel.tt</DependentUpon>
+      <DependentUpon>UsersDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\UsersModel.Designer.cs">
+    <Compile Include="Models\UsersDB.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>UsersModel.edmx</DependentUpon>
+      <DependentUpon>UsersDB.edmx</DependentUpon>
     </Compile>
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Profiles\UserProfiles.cs" />
@@ -422,25 +410,15 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\ProjectsModel.Context.tt">
+    <Content Include="Models\UsersDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ProjectsModel.edmx</DependentUpon>
-      <LastGenOutput>ProjectsModel.Context.cs</LastGenOutput>
+      <DependentUpon>UsersDB.edmx</DependentUpon>
+      <LastGenOutput>UsersDB.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\ProjectsModel.tt">
+    <Content Include="Models\UsersDB.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ProjectsModel.edmx</DependentUpon>
-      <LastGenOutput>ProjectsModel.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\UsersModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>UsersModel.edmx</DependentUpon>
-      <LastGenOutput>UsersModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\UsersModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>UsersModel.edmx</DependentUpon>
-      <LastGenOutput>UsersModel.cs</LastGenOutput>
+      <DependentUpon>UsersDB.edmx</DependentUpon>
+      <LastGenOutput>UsersDB.cs</LastGenOutput>
     </Content>
     <Content Include="obj\Debug\Bug Management App.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\Bug Management App.dll" />
@@ -456,13 +434,6 @@
     <Content Include="obj\Debug\TempPE\UsersModel.Designer.cs.dll" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\UsersModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>UsersModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\UsersModel.edmx.diagram">
-      <DependentUpon>UsersModel.edmx</DependentUpon>
-    </Content>
     <Content Include="bin\Bug Management App.dll.config" />
     <Content Include="bin\roslyn\csc.exe.config" />
     <Content Include="bin\roslyn\csc.rsp" />
@@ -486,12 +457,12 @@
     <Content Include="obj\Debug\edmxResourcesToEmbed\UsersModel.csdl" />
     <Content Include="obj\Debug\edmxResourcesToEmbed\UsersModel.msl" />
     <Content Include="obj\Debug\edmxResourcesToEmbed\UsersModel.ssdl" />
-    <EntityDeploy Include="Models\ProjectsModel.edmx">
+    <EntityDeploy Include="Models\UsersDB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ProjectsModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>UsersDB.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\ProjectsModel.edmx.diagram">
-      <DependentUpon>ProjectsModel.edmx</DependentUpon>
+    <Content Include="Models\UsersDB.edmx.diagram">
+      <DependentUpon>UsersDB.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
