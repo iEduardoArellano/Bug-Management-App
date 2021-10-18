@@ -6,7 +6,7 @@
 
 <h2>Edit</h2>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Edit", "Projects", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     
@@ -28,7 +28,7 @@
             @Html.LabelFor(model => model.Logo, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <img src="@ViewBag.ImageData" width="50" height="50" />
-                @Html.ValidationMessageFor(model => model.Logo, "", new { @class = "text-danger" })
+                <input type="file" name="imageLogo" accept="images/*" />
             </div>
         </div>
 

@@ -64,15 +64,21 @@ namespace Bug_Management_App.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Projects editedProject)
+        public ActionResult Edit(Projects editedProject, HttpPostedFile imageLogo)
         {
 
             if (ModelState.IsValid)
             {
+                if (imageLogo != null)
+                {
+                    editedProject.Logo = new byte[imageLogo.ContentLength];
+                    imageLogo.InputStream.Read(editedProject.Logo, 0, imageLogo.ContentLength);
+                }
                 var project = _projects.FindProjectById(editedProject.ProjectId);
 
                 project.ProjectName = editedProject.ProjectName;
                 project.CompanyName = editedProject.CompanyName;
+                project.Logo = editedProject.Logo;
                 project.ProjectManager = editedProject.ProjectManager;
                 project.Status = editedProject.Status;
             }
@@ -83,12 +89,10 @@ namespace Bug_Management_App.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult SendToEdit(int projectId)
+        public ActionResult SendProjecToEdit(int projectId)
         {
-            
-                var project = _projects.FindProjectById(projectId);
-
-                ViewBag.ImageData = SetImageData(project.Logo);
+             var project = _projects.FindProjectById(projectId);
+             ViewBag.ImageData = SetImageData(project.Logo);
             //return RedirectToRoute("Edit", project);
 
             return View("Edit", project);
@@ -102,7 +106,7 @@ namespace Bug_Management_App.Controllers
             return RedirectToAction("Index");
         }
 
-        public string SetImageData(byte[] bytesImage)
+        private string SetImageData(byte[] bytesImage)
         {
             string base64Image = Convert.ToBase64String(bytesImage);
 

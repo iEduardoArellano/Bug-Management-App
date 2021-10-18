@@ -9,6 +9,7 @@
     <Property Name="Logo" Type="varbinary(max)" Nullable="false" />
     <Property Name="ProjectManager" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="Status" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ProjectName" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityContainer Name="ProjectsTblStoreContainer">
     <EntitySet Name="Projects" EntityType="Self.Projects" Schema="dbo" store:Type="Tables" />

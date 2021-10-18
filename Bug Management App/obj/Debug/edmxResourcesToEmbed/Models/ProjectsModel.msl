@@ -4,6 +4,7 @@
     <EntitySetMapping Name="Projects">
       <EntityTypeMapping TypeName="ProjectsTbl.Projects">
         <MappingFragment StoreEntitySet="Projects">
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
           <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
           <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
           <ScalarProperty Name="Logo" ColumnName="Logo" />
