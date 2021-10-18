@@ -64,26 +64,23 @@ namespace Bug_Management_App.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Projects editedProject, HttpPostedFile imageLogo)
+        public ActionResult Edit(Projects editedProject, HttpPostedFileBase imageLogo)
         {
-
+            var project = _projects.FindProjectById(editedProject.ProjectId);
             if (ModelState.IsValid)
             {
                 if (imageLogo != null)
                 {
                     editedProject.Logo = new byte[imageLogo.ContentLength];
                     imageLogo.InputStream.Read(editedProject.Logo, 0, imageLogo.ContentLength);
+                    project.Logo = editedProject.Logo;
                 }
-                var project = _projects.FindProjectById(editedProject.ProjectId);
-
                 project.ProjectName = editedProject.ProjectName;
                 project.CompanyName = editedProject.CompanyName;
-                project.Logo = editedProject.Logo;
                 project.ProjectManager = editedProject.ProjectManager;
                 project.Status = editedProject.Status;
             }
             
-
             _projects.SaveProjectsChanges();
 
             return RedirectToAction("Index");
