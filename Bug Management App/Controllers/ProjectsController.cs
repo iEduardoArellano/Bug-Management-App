@@ -28,7 +28,7 @@ namespace Bug_Management_App.Controllers
 
             foreach (var i in projects)
             {
-                imagesData.Add(setImageData(i.Logo));
+                imagesData.Add(SetImageData(i.Logo));
             }
 
             ViewBag.ImagesData = imagesData;
@@ -62,11 +62,36 @@ namespace Bug_Management_App.Controllers
             return View();
         }
 
-        public ActionResult Edit(Projects projectToEdit)
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(Projects editedProject)
         {
-            var project = _projects.FindProjectById(projectToEdit.ProjectId);
 
-            return View(project);
+            if (ModelState.IsValid)
+            {
+                var project = _projects.FindProjectById(editedProject.ProjectId);
+
+                project.ProjectName = editedProject.ProjectName;
+                project.CompanyName = editedProject.CompanyName;
+                project.ProjectManager = editedProject.ProjectManager;
+                project.Status = editedProject.Status;
+            }
+            
+
+            _projects.SaveProjectsChanges();
+
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult SendToEdit(int projectId)
+        {
+            
+                var project = _projects.FindProjectById(projectId);
+
+                ViewBag.ImageData = SetImageData(project.Logo);
+            //return RedirectToRoute("Edit", project);
+
+            return View("Edit", project);
         }
 
         public ActionResult Delete(int projectId)
@@ -77,7 +102,7 @@ namespace Bug_Management_App.Controllers
             return RedirectToAction("Index");
         }
 
-        public string setImageData(byte[] bytesImage)
+        public string SetImageData(byte[] bytesImage)
         {
             string base64Image = Convert.ToBase64String(bytesImage);
 
