@@ -11,68 +11,65 @@ namespace Bug_Management_App.Repos
 {
     public class SqlUsersRepo : IRegisterUsers, IUsers, IProjects
     {
-        private readonly UsersTbl _users;
-        private readonly ProjectsTbl _projects;
-        
+        private readonly UsersDBEntities _DB;
 
         public SqlUsersRepo()
         {
-            _users = new UsersTbl();
-            _projects = new ProjectsTbl();
+            _DB = new UsersDBEntities();
             
         }
 
         public Users GetUserByUserName(string userName)
         {
-            return _users.Users.FirstOrDefault(u => u.UserName == userName);
+            return _DB.Users.FirstOrDefault(u => u.UserName == userName);
         }
 
         public void RegisterUser(Users user)
         {
-            _users.Users.Add(user);
+            _DB.Users.Add(user);
 
             
         }
 
         public IEnumerable<Projects> GetProjectsInDb()
         {
-            return _projects.Projects.ToList();
+            return _DB.Projects.ToList();
         }
 
         public Users GetUserAtLogin(LoginUserDto loginUser)
         {
             
-            return _users.Users.FirstOrDefault(u => u.UserName == loginUser.UserName && u.Password == loginUser.Password);
+            return _DB.Users.FirstOrDefault(u => u.UserName == loginUser.UserName && u.Password == loginUser.Password);
         }
 
 
         public void CreateProject(Projects projectToCreate)
         {
-            _projects.Projects.Add(projectToCreate);
+            _DB.Projects.Add(projectToCreate);
 
             
         }
 
         public Projects FindProjectById(int projectId)
         {
-            return _projects.Projects.FirstOrDefault(p => p.ProjectId == projectId);
+            return _DB.Projects.FirstOrDefault(p => p.ProjectId == projectId);
         }
 
         public void DeleteProject(int projectId)
         {
             var projectToDelete = FindProjectById(projectId);
-            _projects.Projects.Remove(projectToDelete);
+            _DB.Projects.Remove(projectToDelete);
         }
 
 
         public void SaveChanges()
         {
-            _users.SaveChanges();
+            _DB.SaveChanges();
         }
 
         public void SaveProjectsChanges()
         {
-            _projects.SaveChanges();
+            _DB.SaveChanges();
         }
 
     }
