@@ -24,6 +24,11 @@ namespace Bug_Management_App.Repos
             return _DB.Users.FirstOrDefault(u => u.UserName == userName);
         }
 
+        public Users GetUserById(int userId)
+        {
+            return _DB.Users.FirstOrDefault(u => u.Id == userId);
+        }
+
         public void RegisterUser(Users user)
         {
             _DB.Users.Add(user);
@@ -48,14 +53,14 @@ namespace Bug_Management_App.Repos
             
         }
 
-        public Projects FindProjectById(int projectId)
+        public Projects GetProjectById(int projectId)
         {
             return _DB.Projects.FirstOrDefault(p => p.ProjectId == projectId);
         }
 
         public void DeleteProject(int projectId)
         {
-            var projectToDelete = FindProjectById(projectId);
+            var projectToDelete = GetProjectById(projectId);
             _DB.Projects.Remove(projectToDelete);
         }
 

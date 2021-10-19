@@ -14,6 +14,8 @@ namespace Bug_Management_App.Interfaces
 
         Users GetUserAtLogin(LoginUserDto loginUser);
 
+        Users GetUserById(int userId);
+
         void SaveChanges();
     }
 }

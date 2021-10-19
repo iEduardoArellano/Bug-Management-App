@@ -32,7 +32,7 @@ namespace Bug_Management_App.Controllers
                 if (userInDB != null)
                 {
                     FormsAuthentication.SetAuthCookie(loginUser.UserName, true);
-                    return RedirectToAction("Index", "Users", userInDB.UserName);
+                    return RedirectToAction("Index", "Users", new { userId = userInDB.Id });
                 }
 
             }
