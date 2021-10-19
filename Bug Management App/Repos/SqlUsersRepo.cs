@@ -27,8 +27,6 @@ namespace Bug_Management_App.Repos
         public void RegisterUser(Users user)
         {
             _DB.Users.Add(user);
-
-            
         }
 
         public IEnumerable<Projects> GetProjectsInDb()

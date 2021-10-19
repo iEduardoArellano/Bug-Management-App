@@ -216,6 +216,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ProjectsController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Data\AutoMap.cs" />
     <Compile Include="Dtos\CreateProjectDto.cs" />
     <Compile Include="Dtos\LoginUserDto.cs" />
@@ -523,6 +524,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="App_Themes\Tema1\" />
     <Folder Include="Views\Encrypter\" />
+    <Folder Include="Views\Users\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
