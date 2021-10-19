@@ -66,7 +66,7 @@ namespace Bug_Management_App.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Projects editedProject, HttpPostedFileBase imageLogo)
         {
-            var project = _projects.FindProjectById(editedProject.ProjectId);
+            var project = _projects.GetProjectById(editedProject.ProjectId);
             if (ModelState.IsValid)
             {
                 if (imageLogo != null)
@@ -88,7 +88,7 @@ namespace Bug_Management_App.Controllers
 
         public ActionResult SendProjecToEdit(int projectId)
         {
-             var project = _projects.FindProjectById(projectId);
+             var project = _projects.GetProjectById(projectId);
              ViewBag.ImageData = SetImageData(project.Logo);
             //return RedirectToRoute("Edit", project);
 
