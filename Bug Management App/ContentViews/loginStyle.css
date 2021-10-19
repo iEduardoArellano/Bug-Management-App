@@ -95,7 +95,7 @@ div.a {
 .login-html .sign-in:checked + .tab,
 .login-html .sign-up:checked + .tab {
     color: #fff;
-    border-color: #1161ee;
+    border-color: #337ab7
 }
 
 .login-form {
@@ -125,7 +125,7 @@ div.a {
             font-size: 12px;
             height: auto;
             border: none;
-            padding: 8px 8px;
+            padding: 6px 12px;
             border-radius: 5px;
             background: rgba(255,255,255,.1);
         }
@@ -144,12 +144,12 @@ div.a {
         }
 
         .login-form .group .button {
-            background: #1161ee;
+            background: #337ab7;
             font-size: 12px;
         }
 
         .login-form .group .button {
-            background: #1161ee;
+            background: #337ab7;
             font-size: 12px;
         }
 
@@ -190,7 +190,7 @@ div.a {
         }
 
             .login-form .group .check:checked + login-label .icon {
-                background: #1161ee;
+                background: #337ab7;
             }
 
                 .login-form .group .check:checked + login-label .icon:before {
@@ -217,7 +217,7 @@ div.a {
 
 .titleLine {
     height: 3px;
-    background: #1161ee;
+    background: #337ab7;
 }
 
 .foot-lnk {

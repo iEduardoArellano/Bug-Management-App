@@ -4,28 +4,26 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
-
 @using (Html.BeginForm("Edit", "Projects", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Projects</h4>
+        <div class="title-text">Editar proyecto</div>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.ProjectId)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.CompanyName, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.CompanyName, htmlAttributes: new { @class = "project-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.CompanyName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.CompanyName, new { htmlAttributes = new { @class = "project-input" } })
                 @Html.ValidationMessageFor(model => model.CompanyName, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Logo, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Logo, htmlAttributes: new { @class = "project-label col-md-2" })
             <div class="col-md-10">
                 <img src="@ViewBag.ImageData" width="50" height="50" />
                 <input type="file" name="imageLogo" accept="images/*" />
@@ -33,32 +31,32 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.ProjectManager, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.ProjectManager, htmlAttributes: new { @class = "project-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.ProjectManager, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.ProjectManager, new { htmlAttributes = new { @class = "project-input" } })
                 @Html.ValidationMessageFor(model => model.ProjectManager, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "project-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Status, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Status, new { htmlAttributes = new { @class = "project-input" } })
                 @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.ProjectName, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.ProjectName, htmlAttributes: new { @class = "project-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.ProjectName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.ProjectName, new { htmlAttributes = new { @class = "project-input" } })
                 @Html.ValidationMessageFor(model => model.ProjectName, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+            <div class="project-label col-md-offset-2 col-md-12">
+                <input type="submit" value="GUARDAR" class="project-btn" />
             </div>
         </div>
     </div>

@@ -53,5 +53,7 @@ namespace Bug_Management_App.Controllers
         {
             return View();
         }
+
+       
     }
 }

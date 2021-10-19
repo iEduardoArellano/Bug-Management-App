@@ -65,12 +65,14 @@
                             @Html.ValidationMessageFor(model => model.Role, "", new { @class = "text-danger" })
                         </div>
                     </div>
-
                     <div class="form-group group">
                         <div class="login-label col-md-12">
                             <input type="submit" value="REGISTRARSE" class="button" />
                         </div>
                     </div>
+                     <p>
+                         @Html.ActionLink("Iniciar sesión", "Login", "Login")
+                     </p>
                 </div>
             </div>
         </div>
