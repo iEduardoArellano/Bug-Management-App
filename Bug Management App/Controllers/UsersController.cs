@@ -20,12 +20,14 @@ namespace Bug_Management_App.Controllers
        public ActionResult Index(int userId)
         {
             var user = _users.GetUserById(userId);
-            if (user.Role != null)
+            if (user.Role == null)
             {
                 return View(user);
             }
 
-            return RedirectToAction("Login");
+            return RedirectToAction("Index", "Projects");
         }
+
+
     }
 }
