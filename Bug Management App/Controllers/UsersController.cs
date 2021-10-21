@@ -11,17 +11,21 @@ namespace Bug_Management_App.Controllers
     public class UsersController : Controller
     {
         private IUsers _users;
+        private IRoles _roles;
 
-        public UsersController(IUsers users)
+        public UsersController(IUsers users, IRoles roles)
         {
             _users = users;
+            _roles = roles;
         }
 
        public ActionResult Index(string userId)
         {
             var user = _users.GetUserByUserName(userId);
+            var roles = _roles.GetRoles();
             if (user.Role == null)
             {
+                ViewBag.roles = roles;
                 return View(user);
             }
 

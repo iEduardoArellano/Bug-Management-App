@@ -22,6 +22,4 @@ namespace Bug_Management_App.Models
         public string Password { get; set; }
         public string Role { get; set; }
     }
-      
-
 }
