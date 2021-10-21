@@ -16,6 +16,8 @@ namespace Bug_Management_App.Interfaces
 
         Users GetUserById(int userId);
 
+        bool UserExists(string userName);
+
         void SaveChanges();
     }
 }

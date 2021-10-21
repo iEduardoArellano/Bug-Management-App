@@ -14,11 +14,13 @@ namespace Bug_Management_App.Controllers
     {
         private readonly IRegisterUsers _registerUsers;
         private readonly IEncrypter _encrypter;
+        private readonly IUsers _users;
 
-        public RegisterController(IRegisterUsers registerUsers, IEncrypter encrypter)
+        public RegisterController(IRegisterUsers registerUsers, IEncrypter encrypter, IUsers users)
         {
             _registerUsers = registerUsers;
             _encrypter = encrypter;
+            _users = users;
             
         }
 
@@ -35,6 +37,10 @@ namespace Bug_Management_App.Controllers
             if (ModelState.IsValid)
             {
                 user.Password = _encrypter.EncryptPassword(user.Password);
+                if (_users.UserExists(user.UserName))
+                {
+                    return RedirectToAction("Login", "Login");
+                }
                 var mappedRegisterModel = AutoMap._mapper.Map<Users>(user);
 
                 _registerUsers.RegisterUser(mappedRegisterModel);

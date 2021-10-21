@@ -17,9 +17,9 @@ namespace Bug_Management_App.Controllers
             _users = users;
         }
 
-       public ActionResult Index(int userId)
+       public ActionResult Index(string userId)
         {
-            var user = _users.GetUserById(userId);
+            var user = _users.GetUserByUserName(userId);
             if (user.Role == null)
             {
                 return View(user);

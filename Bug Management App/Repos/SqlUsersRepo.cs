@@ -75,5 +75,15 @@ namespace Bug_Management_App.Repos
             _DB.SaveChanges();
         }
 
+        public bool UserExists(string userName)
+        {
+            if (_DB.Users.FirstOrDefault(u => u.UserName == userName) != null)
+            {
+                return true;
+            }
+
+            return false;
+           
+        }
     }
 }
