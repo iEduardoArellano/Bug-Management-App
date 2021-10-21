@@ -17,7 +17,7 @@
             <a class="nav-link" href="#">Filtro</a>
         </li>
         <li class="nav-item navbar-right ">
-            @Html.ActionLink("Agregrar proyecto", "Create", "Projects", new { @class = "btn btn-primary", @style = "color:white" } )
+            @Html.ActionLink("Agregrar proyecto", "Create", "Projects", null , new { @class = "btn btn-primary", @style = "color:white" } )
         </li>
     </ul>
 
@@ -49,9 +49,9 @@
 
                     <td>@item.value.Status</td>
 
-                    <td>@Html.ActionLink("Editar proyecto", "SendProjecToEdit", "Projects", new { projectId = item.value.ProjectId }, null)</td>
+                    <td>@Html.ActionLink("Editar proyecto", "SendProjecToEdit", "Projects", new { projectId = item.value.ProjectId },new { @class = "btn btn-primary", @style = "color:white" })</td>
 
-                    <td>@Html.ActionLink("Eliminar", "Delete", "Projects", new { projectId = item.value.ProjectId }, null)</td>
+                    <td>@Html.ActionLink("Eliminar", "Delete", "Projects", new { projectId = item.value.ProjectId }, new { @class = "btn btn-primary", @style = "color:white" })</td>
 
                 </tr>
 

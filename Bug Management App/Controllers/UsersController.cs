@@ -27,7 +27,7 @@ namespace Bug_Management_App.Controllers
 
             return RedirectToAction("Index", "Projects");
         }
-
+        
 
     }
 }
