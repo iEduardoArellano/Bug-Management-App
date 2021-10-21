@@ -26,7 +26,7 @@ namespace Bug_Management_App.Models
         }
     
         public virtual DbSet<Projects> Projects { get; set; }
-     
+        public virtual DbSet<Roles> Roles { get; set; }
         public virtual DbSet<Users> Users { get; set; }
     }
 }

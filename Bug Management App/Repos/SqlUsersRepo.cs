@@ -9,7 +9,7 @@ using System.Web;
 
 namespace Bug_Management_App.Repos
 {
-    public class SqlUsersRepo : IRegisterUsers, IUsers, IProjects
+    public class SqlUsersRepo : IRegisterUsers, IUsers, IProjects, IRoles
     {
         private readonly UsersDBEntities _DB;
 
@@ -84,6 +84,11 @@ namespace Bug_Management_App.Repos
 
             return false;
            
+        }
+
+        public IEnumerable<Roles> GetRoles()
+        {
+            return _DB.Roles.ToList();
         }
     }
 }
