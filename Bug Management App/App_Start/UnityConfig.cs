@@ -21,6 +21,7 @@ namespace Bug_Management_App
             container.RegisterType<IUsers, SqlUsersRepo>();
             container.RegisterType<IProjects, SqlUsersRepo>();
             container.RegisterType<IEncrypter, EncrypterRepo>();
+            container.RegisterType<IRoles, SqlUsersRepo>();
 
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }
