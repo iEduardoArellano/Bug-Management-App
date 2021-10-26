@@ -31,11 +31,11 @@
 
                     <p><img src="@ViewBag.ImagesData[item.index]" width="50" height="50" /></p>
 
-                    <p>@item.value.CompanyName</p>
+                    <p>Company name: @item.value.CompanyName</p>
 
-                    <p>@item.value.ProjectManager</p>
+                    <p>Project Manager: @item.value.ProjectManager</p>
 
-                    <p>@item.value.Status</p>
+                    <p>Status: @item.value.Status</p>
 
                     <p>@Html.ActionLink("Editar proyecto", "SendProjecToEdit", "Projects", new { projectId = item.value.ProjectId }, new { @class = "btn btn-primary", @style = "color:white" })</p>
 
@@ -45,39 +45,6 @@
             </div>
 
         }
-    </div>
-    <div class="row">
-        <div class="column">
-            <div class="card">
-                <h3>Card 1</h3>
-                <p>Some text</p>
-                <p>Some text</p>
-            </div>
-        </div>
-
-        <div class="column">
-            <div class="card">
-                <h3>Card 2</h3>
-                <p>Some text</p>
-                <p>Some text</p>
-            </div>
-        </div>
-
-        <div class="column">
-            <div class="card">
-                <h3>Card 3</h3>
-                <p>Some text</p>
-                <p>Some text</p>
-            </div>
-        </div>
-
-        <div class="column">
-            <div class="card">
-                <h3>Card 4</h3>
-                <p>Some text</p>
-                <p>Some text</p>
-            </div>
-        </div>
     </div>
 
 </div>
