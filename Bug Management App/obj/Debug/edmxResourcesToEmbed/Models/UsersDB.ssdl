@@ -10,6 +10,8 @@
     <Property Name="ProjectManager" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="Status" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="ProjectName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreationDate" Type="date" Nullable="false" />
+    <Property Name="Creator" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Roles">
     <Key>

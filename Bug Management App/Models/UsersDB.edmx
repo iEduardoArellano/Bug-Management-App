@@ -15,6 +15,8 @@
           <Property Name="ProjectManager" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="Status" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="ProjectName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreationDate" Type="date" Nullable="false" />
+          <Property Name="Creator" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Roles">
           <Key>
@@ -54,6 +56,8 @@
           <Property Name="ProjectManager" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ProjectName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Creator" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Roles">
           <Key>
@@ -88,6 +92,8 @@
           <EntitySetMapping Name="Projects">
             <EntityTypeMapping TypeName="UsersDBModel.Projects">
               <MappingFragment StoreEntitySet="Projects">
+                <ScalarProperty Name="Creator" ColumnName="Creator" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
                 <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
                 <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
                 <ScalarProperty Name="Logo" ColumnName="Logo" />
