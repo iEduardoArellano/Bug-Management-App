@@ -41,23 +41,28 @@
             @Html.DisplayFor(model => model.Email)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Role)
-        </dt>
-        <dd>
-
-        </dd>
-            @Html.DropDownList("Rol", new SelectList(ViewBag.roles, "Id", "Role"));
-        <dt>
-            
-        </dt>
-        <dd>
-          <input type="submit" value="GUARDAR" class="project-btn" />
-        </dd>
-
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+    @using (Html.BeginForm("SetRole", "Users", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form">
+            <div class="form-group">
+                @Html.DisplayNameFor(model => model.Role)
+                <div>
+                    @Html.DropDownListFor(model => model.Role, (IEnumerable<SelectListItem>)ViewBag.roles)
+                </div>
+
+            </div>
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <input type="submit" value="GUARDAR" class="project-btn" />
+                </div>
+            </div>
+        </div>
+    }
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>

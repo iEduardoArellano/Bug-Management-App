@@ -1,4 +1,5 @@
-﻿using Bug_Management_App.Interfaces;
+﻿using Bug_Management_App.Dtos;
+using Bug_Management_App.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,15 +24,27 @@ namespace Bug_Management_App.Controllers
         {
             var user = _users.GetUserByUserName(userId);
             var roles = _roles.GetRoles();
+
             if (user.Role == null)
             {
-                ViewBag.roles = roles;
+                ViewBag.roles = roles.Select(x=> new SelectListItem { 
+                    Text = x.Role,
+                    Value = x.Id.ToString()
+                });
                 return View(user);
             }
 
             return RedirectToAction("Index", "Projects");
         }
-        
+        public ActionResult SetRole(RegisterUserDto registerUserDto )
+        {
+            var user = _users.GetUserByUserName(User.Identity.Name);
+
+            user.Role = registerUserDto.Role;
+            _users.SaveChanges();
+
+            return RedirectToAction("Index", "Projects");
+        }
 
     }
 }
