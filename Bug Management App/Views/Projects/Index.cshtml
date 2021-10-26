@@ -8,57 +8,78 @@
 <div class="container">
     <ul class="nav nav-tabs filters-style">
         <li class="nav-item">
-            <a class="nav-link" href="#">Filtro</a>
+            <a class="nav-link" href="#">Fecha</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Filtro2</a>
+            <a class="nav-link" href="#">Nombre del proyecto</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Filtro</a>
+            <a class="nav-link" href="#">Creados por mí</a>
         </li>
         <li class="nav-item navbar-right ">
-            @Html.ActionLink("Agregrar proyecto", "Create", "Projects", null , new { @class = "btn btn-primary", @style = "color:white" } )
+            @Html.ActionLink("Agregrar proyecto", "Create", "Projects", null, new { @class = "btn btn-primary", @style = "color:white" })
         </li>
     </ul>
 
-    <table class="table table-hover">
-        <thead class="thead-style">
-            <tr>
-                <td>Nombre de proyecto</td>
-                <td>Logo</td>
-                <td>Compañia</td>
-                <td>Project Manager</td>
-                <td>Status</td>
-                <td></td>
-                <td></td>
-            </tr>
-        </thead>
-
+    <div class="row">
 
         @foreach (var item in Model.Select((value, index) => new { value, index }))
         {
-            <tbody>
-                <tr>
-                    <td>@item.value.ProjectName</td>
+            <div class="column">
+                <div class="card">
+                    <h3>@item.value.ProjectName</h3>
 
-                    <td><img src="@ViewBag.ImagesData[item.index]" width="50" height="50" /></td>
+                    <p><img src="@ViewBag.ImagesData[item.index]" width="50" height="50" /></p>
 
-                    <td>@item.value.CompanyName</td>
+                    <p>@item.value.CompanyName</p>
 
-                    <td>@item.value.ProjectManager</td>
+                    <p>@item.value.ProjectManager</p>
 
-                    <td>@item.value.Status</td>
+                    <p>@item.value.Status</p>
 
-                    <td>@Html.ActionLink("Editar proyecto", "SendProjecToEdit", "Projects", new { projectId = item.value.ProjectId },new { @class = "btn btn-primary", @style = "color:white" })</td>
+                    <p>@Html.ActionLink("Editar proyecto", "SendProjecToEdit", "Projects", new { projectId = item.value.ProjectId }, new { @class = "btn btn-primary", @style = "color:white" })</p>
 
-                    <td>@Html.ActionLink("Eliminar", "Delete", "Projects", new { projectId = item.value.ProjectId }, new { @class = "btn btn-primary", @style = "color:white" })</td>
+                    <p>@Html.ActionLink("Eliminar", "Delete", "Projects", new { projectId = item.value.ProjectId }, new { @class = "btn btn-primary", @style = "color:white" })</p>
+                </div>
 
-                </tr>
-
-            </tbody>
+            </div>
 
         }
-    </table>
+    </div>
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <h3>Card 1</h3>
+                <p>Some text</p>
+                <p>Some text</p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <h3>Card 2</h3>
+                <p>Some text</p>
+                <p>Some text</p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <h3>Card 3</h3>
+                <p>Some text</p>
+                <p>Some text</p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <h3>Card 4</h3>
+                <p>Some text</p>
+                <p>Some text</p>
+            </div>
+        </div>
+    </div>
+
 </div>
 
 

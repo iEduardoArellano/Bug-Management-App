@@ -9,6 +9,6 @@ namespace Bug_Management_App.Interfaces
 {
     public interface IRoles
     {
-        IEnumerable<Roles> GetRoles();
+        List<Roles> GetRoles();
     }
 }

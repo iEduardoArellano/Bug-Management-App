@@ -86,7 +86,7 @@ namespace Bug_Management_App.Repos
            
         }
 
-        public IEnumerable<Roles> GetRoles()
+        public List<Roles> GetRoles()
         {
             return _DB.Roles.ToList();
         }
