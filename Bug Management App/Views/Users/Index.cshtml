@@ -7,57 +7,60 @@
 
 <div>
     <h4>Users</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
+    @using (Html.BeginForm("SetRole", "Users", FormMethod.Post))
+    {
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.LastName)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.LastName)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.LastName)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.LastName)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.UserName)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.UserName)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.UserName)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.UserName)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Role)
-        </dt>
-        <dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Role)
+            </dt>
+            <dd>
+                @Html.DropDownList("Rol", new SelectList(ViewBag.roles, "Id", "Role"));
+            </dd>
 
-        </dd>
-            @Html.DropDownList("Rol", new SelectList(ViewBag.roles, "Id", "Role"));
-        <dt>
-            
-        </dt>
-        <dd>
-          <input type="submit" value="GUARDAR" class="project-btn" />
-        </dd>
+            <dt>
 
-    </dl>
+            </dt>
+            <dd>
+                <input type="submit" value="GUARDAR" class="project-btn" />
+            </dd>
+
+        </dl>
+    }
+
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
