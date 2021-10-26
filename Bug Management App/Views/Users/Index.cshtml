@@ -46,9 +46,9 @@
             @Html.DisplayNameFor(model => model.Role)
         </dt>
         <dd>
-
+            @Html.DropDownList("Rol", new SelectList(ViewBag.roles, "Id", "Role"))
         </dd>
-            @Html.DropDownList("Rol", new SelectList(ViewBag.roles.Role ,"Role"))
+            
         <dt>
             
         </dt>
