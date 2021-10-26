@@ -4,6 +4,8 @@
     <EntitySetMapping Name="Projects">
       <EntityTypeMapping TypeName="UsersDBModel.Projects">
         <MappingFragment StoreEntitySet="Projects">
+          <ScalarProperty Name="Creator" ColumnName="Creator" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
           <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
           <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
           <ScalarProperty Name="Logo" ColumnName="Logo" />

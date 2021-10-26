@@ -22,5 +22,8 @@ namespace Bug_Management_App.Dtos
         public string ProjectManager { get; set; }
      
         public string Status { get; set; }
+
+        public System.DateTime CreationDate { get; set; }
+        public int Creator { get; set; }
     }
 }

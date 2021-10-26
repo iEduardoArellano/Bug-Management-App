@@ -261,6 +261,7 @@
     <Compile Include="Profiles\UserProfiles.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repos\EncrypterRepo.cs" />
+    <Compile Include="Interfaces\IRoles.cs" />
     <Compile Include="Repos\SqlUsersRepo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>

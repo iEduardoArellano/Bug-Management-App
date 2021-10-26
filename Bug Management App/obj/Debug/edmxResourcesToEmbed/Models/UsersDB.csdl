@@ -10,6 +10,8 @@
     <Property Name="ProjectManager" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="ProjectName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Creator" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="Roles">
     <Key>

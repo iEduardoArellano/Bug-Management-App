@@ -1,5 +1,4 @@
 ﻿@model Bug_Management_App.Models.Users
-
 @{
     ViewBag.Title = "Index";
 }
@@ -46,9 +45,9 @@
             @Html.DisplayNameFor(model => model.Role)
         </dt>
         <dd>
-            @Html.DropDownList("Rol", new SelectList(ViewBag.roles, "Id", "Role"))
+
         </dd>
-            
+            @Html.DropDownList("Rol", new SelectList(ViewBag.roles, "Id", "Role"));
         <dt>
             
         </dt>

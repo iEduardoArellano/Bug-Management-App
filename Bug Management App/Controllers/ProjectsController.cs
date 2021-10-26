@@ -14,10 +14,12 @@ namespace Bug_Management_App.Controllers
     public class ProjectsController : Controller
     {
         private readonly IProjects _projects;
+        private readonly IUsers _users;
 
-        public ProjectsController(IProjects projects)
+        public ProjectsController(IProjects projects, IUsers users)
         {
             _projects = projects;
+            _users = users;
         }
 
         //[HttpGet]
@@ -41,12 +43,14 @@ namespace Bug_Management_App.Controllers
         {
             if (ModelState.IsValid)
             {
+                createProject.CreationDate = DateTime.Today;
+                var currentUser = _users.GetUserByUserName(User.Identity.Name);
+                createProject.Creator = currentUser.Id;
                 if (imageLogo != null)
                 {
                     createProject.Logo = new byte[imageLogo.ContentLength];
                     imageLogo.InputStream.Read(createProject.Logo, 0 ,imageLogo.ContentLength);
                 }
-
                 var mappedCreateProject = AutoMap._mapper.Map<Projects>(createProject);
                 _projects.CreateProject(mappedCreateProject);
                 _projects.SaveProjectsChanges();

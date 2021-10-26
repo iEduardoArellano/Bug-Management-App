@@ -20,5 +20,7 @@ namespace Bug_Management_App.Models
         public string ProjectManager { get; set; }
         public string Status { get; set; }
         public string ProjectName { get; set; }
+        public System.DateTime CreationDate { get; set; }
+        public int Creator { get; set; }
     }
 }
