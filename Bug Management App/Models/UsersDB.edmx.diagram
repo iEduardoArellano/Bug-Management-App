@@ -8,6 +8,7 @@
         <EntityTypeShape EntityType="UsersDBModel.Projects" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="UsersDBModel.Roles" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="UsersDBModel.Users" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="UsersDBModel.FK_UserID_CreatorID" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
