@@ -21,8 +21,7 @@
     color: #9eaaaa;
 }
 .filters-style{
-    margin: 10px 0px;
-    padding: 15px;
+    margin: 30px 0px;
 }
 .add-style {
     background-color: #1161ee;
@@ -74,26 +73,33 @@
 .dropdown:hover .dropdown-con {
     display: block;
 }
+.footer-style {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
 
 /*Projects cards style */
 * {
+    padding: 0px;
+    margin: 0px;
     box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-}
 
 /* Float four columns side by side */
 .column {
     float: left;
     width: 25%;
-    padding: 0 10px;
+    padding: 10px 10px;
 }
 
 /* Remove extra left and right margins, due to padding */
 .row {
-    margin: 0 -5px;
+   
+    margin: 10px -5px ;
 }
 
     /* Clear floats after the columns */

@@ -3,10 +3,11 @@
     ViewBag.Title = "Index";
 }
 
-
-
 <div class="container">
     <ul class="nav nav-tabs filters-style">
+        <li class="nav-item">
+            <a class="nav-link" href="#">Todos</a>
+        </li>
         <li class="nav-item">
             <a class="nav-link" href="#">Fecha</a>
         </li>
@@ -20,9 +21,8 @@
             @Html.ActionLink("Agregrar proyecto", "Create", "Projects", null, new { @class = "btn btn-primary", @style = "color:white" })
         </li>
     </ul>
-
-    <div class="row">
-
+    
+    <div class="row ">
         @foreach (var item in Model.Select((value, index) => new { value, index }))
         {
             <div class="column">
@@ -41,12 +41,9 @@
 
                     <p>@Html.ActionLink("Eliminar", "Delete", "Projects", new { projectId = item.value.ProjectId }, new { @class = "btn btn-primary", @style = "color:white" })</p>
                 </div>
-
             </div>
-
         }
     </div>
-
 </div>
 
 
