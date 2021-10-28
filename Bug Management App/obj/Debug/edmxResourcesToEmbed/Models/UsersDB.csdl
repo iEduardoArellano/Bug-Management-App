@@ -12,7 +12,7 @@
     <Property Name="ProjectName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="Creator" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Users" Relationship="UsersDBModel.FK_UserID_CreatorID" FromRole="Projects" ToRole="Users" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_UserID_CreatorID" FromRole="Projects" ToRole="Users" />
   </EntityType>
   <EntityType Name="Roles">
     <Key>
@@ -31,23 +31,12 @@
     <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Role" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Projects" Relationship="UsersDBModel.FK_UserID_CreatorID" FromRole="Users" ToRole="Projects" />
+    <Property Name="Role" Type="Int32" />
+    <NavigationProperty Name="Projects" Relationship="Self.FK_UserID_CreatorID" FromRole="Users" ToRole="Projects" />
   </EntityType>
-  <EntityContainer Name="UsersDBEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Projects" EntityType="Self.Projects" />
-    <EntitySet Name="Roles" EntityType="Self.Roles" />
-    <EntitySet Name="Users" EntityType="Self.Users" />
-    <AssociationSet Name="FK_UserID_CreatorID" Association="UsersDBModel.FK_UserID_CreatorID">
-      <End Role="Users" EntitySet="Users" />
-      <End Role="Projects" EntitySet="Projects" />
-    </AssociationSet>
-  </EntityContainer>
   <Association Name="FK_UserID_CreatorID">
-    <End Type="UsersDBModel.Users" Role="Users" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Type="UsersDBModel.Projects" Role="Projects" Multiplicity="*" />
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Projects" Type="Self.Projects" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Users">
         <PropertyRef Name="Id" />
@@ -57,4 +46,13 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityContainer Name="UsersDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Projects" EntityType="Self.Projects" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" />
+    <EntitySet Name="Users" EntityType="Self.Users" />
+    <AssociationSet Name="FK_UserID_CreatorID" Association="Self.FK_UserID_CreatorID">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Projects" EntitySet="Projects" />
+    </AssociationSet>
+  </EntityContainer>
 </Schema>

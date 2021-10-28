@@ -25,7 +25,7 @@ namespace Bug_Management_App.Controllers
             var user = _users.GetUserByUserName(userId);
             var roles = _roles.GetRoles();
 
-            if (user.Role == null)
+            if (user.Role == 0)
             {
                 ViewBag.roles = roles.Select(x=> new SelectListItem { 
                     Text = x.Role,
