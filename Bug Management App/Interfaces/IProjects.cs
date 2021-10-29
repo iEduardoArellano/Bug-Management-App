@@ -11,6 +11,8 @@ namespace Bug_Management_App.Interfaces
     {
         IEnumerable<Projects> GetProjectsInDb();
 
+        IEnumerable<Projects> GetProjectsCreatedByUser(int userId);
+
         void CreateProject(Projects projectToCreate);
 
         Projects GetProjectById(int projectId);

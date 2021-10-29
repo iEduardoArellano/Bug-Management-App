@@ -27,7 +27,7 @@ namespace Bug_Management_App.Controllers
         {
             List<Projects> projects = _projects.GetProjectsInDb().ToList();
             List<string> imagesData = new List<string>();
-
+            
             foreach (var i in projects)
             {
                 imagesData.Add(SetImageData(i.Logo));
@@ -46,6 +46,7 @@ namespace Bug_Management_App.Controllers
                 createProject.CreationDate = DateTime.Today;
                 var currentUser = _users.GetUserByUserName(User.Identity.Name);
                 createProject.Creator = currentUser.Id;
+
                 if (imageLogo != null)
                 {
                     createProject.Logo = new byte[imageLogo.ContentLength];
