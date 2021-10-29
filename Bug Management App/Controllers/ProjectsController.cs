@@ -37,6 +37,7 @@ namespace Bug_Management_App.Controllers
             return View(projects);
         }
 
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(CreateProjectDto createProject, HttpPostedFileBase imageLogo)
@@ -114,6 +115,22 @@ namespace Bug_Management_App.Controllers
 
             return string.Format("data:image/png;base64,{0}", base64Image);
         }
+
+        public ActionResult sortProjectsByDate()
+        {
+            List<Projects> projects = _projects.GetProjectsInDb().ToList();
+            projects.Sort((x, y) => DateTime.Compare(y.CreationDate, x.CreationDate));
+            List<string> imagesData = new List<string>();
+
+            foreach (var i in projects)
+            {
+                imagesData.Add(SetImageData(i.Logo));
+            }
+
+            ViewBag.ImagesData = imagesData;
+            return View("Index", projects);
+        }
+
 
         
     }
