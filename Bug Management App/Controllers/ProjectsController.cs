@@ -116,22 +116,52 @@ namespace Bug_Management_App.Controllers
             return string.Format("data:image/png;base64,{0}", base64Image);
         }
 
-        public ActionResult sortProjectsByDate()
+        public ActionResult SortProjects(int sortId)
         {
             List<Projects> projects = _projects.GetProjectsInDb().ToList();
-            projects.Sort((x, y) => DateTime.Compare(y.CreationDate, x.CreationDate));
             List<string> imagesData = new List<string>();
+            
+                switch (sortId)
+                {
+                    //Todos
+                    case 0:
+                    foreach (var i in projects)
+                    {
+                        imagesData.Add(SetImageData(i.Logo));
+                    }
 
-            foreach (var i in projects)
-            {
-                imagesData.Add(SetImageData(i.Logo));
+                    ViewBag.ImagesData = imagesData;
+                    return View("Index", projects);
+                    //Fecha
+                    case 1:
+                        projects.Sort((x, y) => DateTime.Compare(y.CreationDate, x.CreationDate));
+                        foreach (var i in projects)
+                        {
+                            imagesData.Add(SetImageData(i.Logo));
+                        }
+
+                        ViewBag.ImagesData = imagesData;
+                        return View("Index", projects);
+                    //Name
+                    case 2:
+                        IEnumerable<Projects> sortedProjects = projects.OrderBy(n => n.ProjectName);
+                        foreach (var i in sortedProjects)
+                        {
+                            imagesData.Add(SetImageData(i.Logo));
+                        }
+                        ViewBag.ImagesData = imagesData;
+                        return View("Index", sortedProjects);
+                    //Por mi
+                    case 3:
+                        var projectsByActualUser = _projects.GetProjectsCreatedByUser(_users.GetUserByUserName(User.Identity.Name).Id);
+                        foreach (var i in projectsByActualUser)
+                        {
+                            imagesData.Add(SetImageData(i.Logo));
+                        }
+                        ViewBag.ImagesData = imagesData;
+                        return View("Index", projectsByActualUser);
             }
-
-            ViewBag.ImagesData = imagesData;
-            return View("Index", projects);
+            return View("Index");
         }
-
-
-        
     }
 }
