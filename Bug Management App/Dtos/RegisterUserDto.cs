@@ -31,6 +31,6 @@ namespace Bug_Management_App.Dtos
         public string Password { get; set; }
 
         [Display(Name ="Rol")]
-        public string Role { get; set; }
+        public int Role { get; set; }
     }
 }

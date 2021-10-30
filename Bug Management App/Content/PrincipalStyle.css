@@ -1,4 +1,22 @@
 ﻿body {
+    margin: 0px 0px 0px 0px;
+}
+
+.container.container-style {
+    background-color: #cbcbcb;
+    padding-right: 0px;
+    padding-left: 0px;
+    width: 95%;
+}
+.scrollbar{
+    right: 0px;
+    top: 0px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 530px;
+}
+.projects-dashboard{
+    padding: 10px 50px;
 }
 .brand-style {
     float: left;
@@ -14,14 +32,14 @@
 }
 .nav-style {
     background-color: #343a40;
-   color: #ffffff;
+    color: #ffffff;
 }
 .nav-elements {
     font: 500 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #9eaaaa;
 }
 .filters-style{
-    margin: 30px 0px;
+    background-color: #ffffff;
 }
 .add-style {
     background-color: #1161ee;
@@ -80,6 +98,19 @@
     width: 100%;
     text-align: center;
 }
+.float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 30px;
+    right: 55px;
+    background-color: #337ab7;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 2px 2px 3px #999;
+  
+}
 
 /*Projects cards style */
 * {
@@ -110,6 +141,8 @@
     }
 
 /* Responsive columns */
+
+
 @media screen and (max-width: 600px) {
     .column {
         width: 100%;

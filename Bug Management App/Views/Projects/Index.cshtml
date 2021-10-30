@@ -2,9 +2,8 @@
 @{
     ViewBag.Title = "Index";
 }
-
-<div class="container">
-    <ul class="nav nav-tabs filters-style">
+<div class="container-fluid">
+    <ul class="nav filters-style nav-pills ">
         <li class="nav-item">
             <a class="nav-link" href="#">Todos</a>
         </li>
@@ -17,41 +16,47 @@
         <li class="nav-item">
             <a class="nav-link" href="#">Creados por mí</a>
         </li>
-        <li class="nav-item navbar-right ">
-            @Html.ActionLink("Agregrar proyecto", "Create", "Projects", null, new { @class = "btn btn-primary", @style = "color:white" })
+        <li class="nav-item">
+           
         </li>
     </ul>
-    
-    <div class="row ">
-        @foreach (var item in Model.Select((value, index) => new { value, index }))
-        {
-            if (item.index == 0 || item.index % 4 == 0)
+</div>
+
+<div class="container-style container">
+    <div class="scrollbar">
+        <div class="row projects-dashboard">
+            @foreach (var item in Model.Select((value, index) => new { value, index }))
             {
-                @Html.Raw("<div class = 'row'>")
-            }
-            <div class="column">
-                <div class="card">
-                    <h3>@item.value.ProjectName</h3>
+                if (item.index == 0 || item.index % 4 == 0)
+                {
+                    @Html.Raw("<div class = 'row'>")
+                }
+                <div class="column">
+                    <div class="card">
+                        <h3>@item.value.ProjectName</h3>
 
-                    <p><img src="@ViewBag.ImagesData[item.index]" width="50" height="50" /></p>
+                        <p><img src="@ViewBag.ImagesData[item.index]" width="50" height="50" /></p>
 
-                    <p>Company name: @item.value.CompanyName</p>
+                        <p>Company name: @item.value.CompanyName</p>
 
-                    <p>Project Manager: @item.value.ProjectManager</p>
+                        <p>Project Manager: @item.value.ProjectManager</p>
 
-                    <p>Status: @item.value.Status</p>
+                        <p>Status: @item.value.Status</p>
 
-                    <p>@Html.ActionLink("Editar proyecto", "SendProjecToEdit", "Projects", new { projectId = item.value.ProjectId }, new { @class = "btn btn-primary", @style = "color:white" })</p>
+                        <p>@Html.ActionLink("Editar proyecto", "SendProjecToEdit", "Projects", new { projectId = item.value.ProjectId }, new { @class = "btn btn-primary", @style = "color:white" })</p>
 
-                    <p>@Html.ActionLink("Eliminar", "Delete", "Projects", new { projectId = item.value.ProjectId }, new { @class = "btn btn-primary", @style = "color:white" })</p>
+                        <p>@Html.ActionLink("Eliminar", "Delete", "Projects", new { projectId = item.value.ProjectId }, new { @class = "btn btn-primary", @style = "color:white" })</p>
+                    </div>
                 </div>
-            </div>
-            if ((item.index + 1) % 4 == 0 || item.index + 1 == Model.Count())
-            {
-                @Html.Raw("</div>")
+                if ((item.index + 1) % 4 == 0 || item.index + 1 == Model.Count())
+                {
+                    @Html.Raw("</div>")
+                }
             }
-        }
+        </div>
     </div>
+
+    @Html.ActionLink("+", "Create", "Projects", null, new { @class = "float"})
 </div>
 
 
