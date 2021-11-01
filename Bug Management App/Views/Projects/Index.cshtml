@@ -5,16 +5,16 @@
 <div class="container-fluid">
     <ul class="nav filters-style nav-pills ">
         <li class="nav-item">
-            <a class="nav-link" href="#">Todos</a>
+            @Html.ActionLink("Todos", "SortProjects", "Projects", new { sortId = 0 }, new { @class = "nav-link"} )
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Fecha</a>
+            @Html.ActionLink("Fecha", "SortProjects", "Projects", new { sortId = 1 }, new { @class = "nav-link" })
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Nombre del proyecto</a>
+            @Html.ActionLink("Alfabetico", "SortProjects", "Projects", new { sortId = 2 }, new { @class = "nav-link" })
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Creados por mí</a>
+            @Html.ActionLink("Creados por mí", "SortProjects", "Projects", new { sortId = 3 }, new { @class = "nav-link" })
         </li>
         <li class="nav-item">
            
@@ -56,7 +56,7 @@
         </div>
     </div>
 
-    @Html.ActionLink("+", "Create", "Projects", null, new { @class = "float"})
+    @Html.ActionLink("nuevO", "Create", "Projects", null, new { @class = "float"})
 </div>
 
 

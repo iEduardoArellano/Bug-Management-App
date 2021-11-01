@@ -13,7 +13,7 @@
     top: 0px;
     overflow-x: hidden;
     overflow-y: scroll;
-    height: 530px;
+    height: 500px;
 }
 .projects-dashboard{
     padding: 10px 50px;
@@ -102,7 +102,7 @@
     position: fixed;
     width: 60px;
     height: 60px;
-    bottom: 30px;
+    bottom: 50px;
     right: 55px;
     background-color: #337ab7;
     color: #FFF;
