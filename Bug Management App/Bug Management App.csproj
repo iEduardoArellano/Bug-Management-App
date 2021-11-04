@@ -213,6 +213,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BugsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ProjectsController.cs" />
@@ -231,6 +232,9 @@
     </Compile>
     <Compile Include="Interfaces\IUsers.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Bugs.cs">
+      <DependentUpon>UsersDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Projects.cs">
@@ -525,6 +529,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="App_Themes\Tema1\" />
+    <Folder Include="Views\Bugs\" />
     <Folder Include="Views\Encrypter\" />
   </ItemGroup>
   <ItemGroup>
