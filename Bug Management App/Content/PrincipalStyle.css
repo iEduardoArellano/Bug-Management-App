@@ -13,7 +13,7 @@
     top: 0px;
     overflow-x: hidden;
     overflow-y: scroll;
-    height: 500px;
+    height: 80vh;
 }
 .projects-dashboard{
     padding: 10px 50px;
@@ -98,6 +98,9 @@
     width: 100%;
     text-align: center;
 }
+.plus-sign {
+
+}
 .float {
     position: fixed;
     width: 60px;
@@ -107,9 +110,8 @@
     background-color: #337ab7;
     color: #FFF;
     border-radius: 50px;
-    text-align: center;
     box-shadow: 2px 2px 3px #999;
-  
+    text-align: center;
 }
 
 /*Projects cards style */
