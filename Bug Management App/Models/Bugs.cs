@@ -26,5 +26,6 @@ namespace Bug_Management_App.Models
         public System.DateTime LastUpdateDate { get; set; }
         public int ReportedByUser { get; set; }
         public int AsignedToUser { get; set; }
+        public int ProjectId { get; set; }
     }
 }

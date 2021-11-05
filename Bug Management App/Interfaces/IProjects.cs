@@ -19,6 +19,6 @@ namespace Bug_Management_App.Interfaces
 
         void DeleteProject(int projectId);
 
-        void SaveProjectsChanges();
+        void SaveChanges();
     }
 }

@@ -9,7 +9,7 @@ using System.Web;
 
 namespace Bug_Management_App.Repos
 {
-    public class SqlUsersRepo : IRegisterUsers, IUsers, IProjects, IRoles
+    public class SqlUsersRepo : IRegisterUsers, IUsers, IProjects, IRoles, IBugs
     {
         private readonly UsersDBEntities _DB;
 
@@ -56,7 +56,6 @@ namespace Bug_Management_App.Repos
         {
             _DB.Projects.Add(projectToCreate);
 
-            
         }
 
         public Projects GetProjectById(int projectId)
@@ -68,17 +67,6 @@ namespace Bug_Management_App.Repos
         {
             var projectToDelete = GetProjectById(projectId);
             _DB.Projects.Remove(projectToDelete);
-        }
-
-
-        public void SaveChanges()
-        {
-            _DB.SaveChanges();
-        }
-
-        public void SaveProjectsChanges()
-        {
-            _DB.SaveChanges();
         }
 
         public bool UserExists(string userName)
@@ -95,6 +83,15 @@ namespace Bug_Management_App.Repos
         public List<Roles> GetRoles()
         {
             return _DB.Roles.ToList();
+        }
+        public void SaveChanges()
+        {
+            _DB.SaveChanges();
+        }
+
+        public void createBug(Bugs bug)
+        {
+            _DB.Bugs.Add(bug);
         }
     }
 }

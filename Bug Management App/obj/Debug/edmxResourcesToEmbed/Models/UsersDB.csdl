@@ -54,5 +54,24 @@
       <End Role="Users" EntitySet="Users" />
       <End Role="Projects" EntitySet="Projects" />
     </AssociationSet>
+    <EntitySet Name="Bugs" EntityType="UsersDBModel.Bugs" />
   </EntityContainer>
+  <EntityType Name="Bugs">
+    <Key>
+      <PropertyRef Name="BugId" />
+    </Key>
+    <Property Name="BugId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Image" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="OperatingSystem" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="OSVersion" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="AppVersion" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="LastUpdateDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ReportedByUser" Type="Int32" Nullable="false" />
+    <Property Name="AsignedToUser" Type="Int32" Nullable="false" />
+    <Property Name="ProjectId" Type="Int32" Nullable="false" />
+  </EntityType>
 </Schema>

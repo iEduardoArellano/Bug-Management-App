@@ -36,5 +36,24 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Bugs">
+      <EntityTypeMapping TypeName="UsersDBModel.Bugs">
+        <MappingFragment StoreEntitySet="Bugs">
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="AsignedToUser" ColumnName="AsignedToUser" />
+          <ScalarProperty Name="ReportedByUser" ColumnName="ReportedByUser" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="AppVersion" ColumnName="AppVersion" />
+          <ScalarProperty Name="OSVersion" ColumnName="OSVersion" />
+          <ScalarProperty Name="OperatingSystem" ColumnName="OperatingSystem" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="BugId" ColumnName="BugId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

@@ -1,5 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="UsersDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Bugs">
+    <Key>
+      <PropertyRef Name="BugId" />
+    </Key>
+    <Property Name="BugId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Image" Type="varbinary(max)" Nullable="false" />
+    <Property Name="OperatingSystem" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="OSVersion" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="AppVersion" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Status" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="CreationDate" Type="date" Nullable="false" />
+    <Property Name="LastUpdateDate" Type="date" Nullable="false" />
+    <Property Name="ReportedByUser" Type="int" Nullable="false" />
+    <Property Name="AsignedToUser" Type="int" Nullable="false" />
+    <Property Name="ProjectId" Type="int" Nullable="false" />
+  </EntityType>
   <EntityType Name="Projects">
     <Key>
       <PropertyRef Name="ProjectId" />
@@ -45,6 +63,7 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="UsersDBModelStoreContainer">
+    <EntitySet Name="Bugs" EntityType="Self.Bugs" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Projects" EntityType="Self.Projects" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
