@@ -222,6 +222,7 @@
     <Compile Include="Dtos\CreateProjectDto.cs" />
     <Compile Include="Dtos\LoginUserDto.cs" />
     <Compile Include="Dtos\RegisterUserDto.cs" />
+    <Compile Include="Interfaces\IBugs.cs" />
     <Compile Include="Interfaces\IEncrypter.cs" />
     <Compile Include="Interfaces\IProjects.cs" />
     <Compile Include="Interfaces\IRegisterUsers.cs" />
@@ -525,11 +526,11 @@
     <Content Include="Views\Projects\_ViewStart.cshtml" />
     <Content Include="Views\Projects\Edit.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\Bugs\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="App_Themes\Tema1\" />
-    <Folder Include="Views\Bugs\" />
     <Folder Include="Views\Encrypter\" />
   </ItemGroup>
   <ItemGroup>

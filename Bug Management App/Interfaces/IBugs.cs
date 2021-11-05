@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace Bug_Management_App.Interfaces
 {
-    interface IBugs
+    public interface IBugs
     {
-        void createBug(Bugs bug);
+        void CreateBug(Bugs bug);
+        void SaveChanges();
     }
 }

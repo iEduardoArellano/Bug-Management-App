@@ -89,7 +89,7 @@ namespace Bug_Management_App.Repos
             _DB.SaveChanges();
         }
 
-        public void createBug(Bugs bug)
+        public void CreateBug(Bugs bug)
         {
             _DB.Bugs.Add(bug);
         }
