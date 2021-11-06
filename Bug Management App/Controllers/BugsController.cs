@@ -17,8 +17,9 @@ namespace Bug_Management_App.Controllers
         {
             _bugs = bugs;
         }
-        public ActionResult Index()
+        public ActionResult Index(int projectId)
         {
+            ViewBag.projectId = projectId;
             return View();
         }
 
