@@ -27,5 +27,6 @@ namespace Bug_Management_App.Models
         public int ReportedByUser { get; set; }
         public int AsignedToUser { get; set; }
         public int ProjectId { get; set; }
+        public string VideoLink { get; set; }
     }
 }

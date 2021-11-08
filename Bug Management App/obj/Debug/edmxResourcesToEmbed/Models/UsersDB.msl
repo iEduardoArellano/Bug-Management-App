@@ -39,6 +39,7 @@
     <EntitySetMapping Name="Bugs">
       <EntityTypeMapping TypeName="UsersDBModel.Bugs">
         <MappingFragment StoreEntitySet="Bugs">
+          <ScalarProperty Name="VideoLink" ColumnName="VideoLink" />
           <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
           <ScalarProperty Name="AsignedToUser" ColumnName="AsignedToUser" />
           <ScalarProperty Name="ReportedByUser" ColumnName="ReportedByUser" />

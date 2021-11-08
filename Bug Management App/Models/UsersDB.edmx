@@ -12,7 +12,7 @@
           <Property Name="BugId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Title" Type="varchar" MaxLength="40" Nullable="false" />
           <Property Name="Description" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="Image" Type="varbinary(max)" Nullable="false" />
+          <Property Name="Image" Type="varbinary(max)" />
           <Property Name="OperatingSystem" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="OSVersion" Type="varchar" MaxLength="15" Nullable="false" />
           <Property Name="AppVersion" Type="varchar" MaxLength="15" Nullable="false" />
@@ -22,6 +22,7 @@
           <Property Name="ReportedByUser" Type="int" Nullable="false" />
           <Property Name="AsignedToUser" Type="int" Nullable="false" />
           <Property Name="ProjectId" Type="int" Nullable="false" />
+          <Property Name="VideoLink" Type="varchar(max)" />
         </EntityType>
         <EntityType Name="Projects">
           <Key>
@@ -144,7 +145,7 @@
           <Property Name="BugId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Title" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
           <Property Name="Description" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="Image" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="OperatingSystem" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="OSVersion" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
           <Property Name="AppVersion" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
@@ -154,6 +155,7 @@
           <Property Name="ReportedByUser" Type="Int32" Nullable="false" />
           <Property Name="AsignedToUser" Type="Int32" Nullable="false" />
           <Property Name="ProjectId" Type="Int32" Nullable="false" />
+          <Property Name="VideoLink" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -199,6 +201,7 @@
           <EntitySetMapping Name="Bugs">
             <EntityTypeMapping TypeName="UsersDBModel.Bugs">
               <MappingFragment StoreEntitySet="Bugs">
+                <ScalarProperty Name="VideoLink" ColumnName="VideoLink" />
                 <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
                 <ScalarProperty Name="AsignedToUser" ColumnName="AsignedToUser" />
                 <ScalarProperty Name="ReportedByUser" ColumnName="ReportedByUser" />

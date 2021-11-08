@@ -63,7 +63,7 @@
     <Property Name="BugId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Title" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
     <Property Name="Description" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
-    <Property Name="Image" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
     <Property Name="OperatingSystem" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
     <Property Name="OSVersion" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
     <Property Name="AppVersion" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
@@ -73,5 +73,6 @@
     <Property Name="ReportedByUser" Type="Int32" Nullable="false" />
     <Property Name="AsignedToUser" Type="Int32" Nullable="false" />
     <Property Name="ProjectId" Type="Int32" Nullable="false" />
+    <Property Name="VideoLink" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
   </EntityType>
 </Schema>
