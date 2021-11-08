@@ -46,9 +46,17 @@
                         <p>@Html.ActionLink("Editar proyecto", "SendProjecToEdit", "Projects", new { projectId = item.value.ProjectId }, new { @class = "btn btn-primary", @style = "color:white" })</p>
 
                         <p>@Html.ActionLink("Eliminar", "Delete", "Projects", new { projectId = item.value.ProjectId }, new { @class = "btn btn-primary", @style = "color:white" })</p>
-
-                        <p>@Html.ActionLink("Bugs", "Index", "Bugs", new { projectId = item.value.ProjectId }, new { @class = "btn btn-primary", @style = "color:white" })</p>
+                        <div class="row"></div>
+                        <div class="row">
+                            <div class="bugs-btn col-md-6">
+                                @Html.ActionLink("Bugs", "Index", "Bugs", new { projectId = item.value.ProjectId }, new { @class = "btn"})
+                            </div>
+                            <div class="team-btn col-md-6">
+                                @Html.ActionLink("Team", "Index", "Bugs", new { projectId = item.value.ProjectId }, new { @class = "btn"})
+                            </div>
+                        </div>   
                     </div>
+                   
                 </div>
                 if ((item.index + 1) % 4 == 0 || item.index + 1 == Model.Count())
                 {

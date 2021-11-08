@@ -3,7 +3,7 @@
 }
 
 .container.container-style {
-    background-color: #d1d1d1;
+    background-color: #dddddd;
     padding-right: 0px;
     padding-left: 0px;
     width: 95%;
@@ -135,6 +135,7 @@
     margin: 10px -5px ;
 }
 
+
     /* Clear floats after the columns */
     .row:after {
         content: "";
@@ -170,4 +171,8 @@
     padding: 16px;
     text-align: center;
     background-color: #f1f1f1;
+}
+.bugs-btn {
+}
+.team-btn {
 }
