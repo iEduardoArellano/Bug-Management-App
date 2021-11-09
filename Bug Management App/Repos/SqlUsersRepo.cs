@@ -93,5 +93,10 @@ namespace Bug_Management_App.Repos
         {
             _DB.Bugs.Add(bug);
         }
+
+        public Bugs ExistingBugReport(int bugId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
