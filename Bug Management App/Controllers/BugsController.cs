@@ -1,4 +1,5 @@
-﻿using Bug_Management_App.Interfaces;
+﻿using Bug_Management_App.Dtos;
+using Bug_Management_App.Interfaces;
 using Bug_Management_App.Models;
 using System;
 using System.Collections.Generic;
@@ -44,6 +45,15 @@ namespace Bug_Management_App.Controllers
                 _bugs.CreateBug(bug);
                 _bugs.SaveChanges();
             }
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult updateBugStatus(int bugId,string status)
+        {
+            var currentBug =  _bugs.ExistingBugReport(bugId);
+
+            currentBug.Status = status;
+            _bugs.SaveChanges();
 
             return RedirectToAction("Index");
         }

@@ -11,7 +11,6 @@ namespace Bug_Management_App.Interfaces
     {
         void CreateBug(Bugs bug);
         void SaveChanges();
-
         Bugs ExistingBugReport(int bugId);
     }
 }

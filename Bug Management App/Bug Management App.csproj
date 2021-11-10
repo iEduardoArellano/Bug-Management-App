@@ -222,6 +222,7 @@
     <Compile Include="Dtos\CreateProjectDto.cs" />
     <Compile Include="Dtos\LoginUserDto.cs" />
     <Compile Include="Dtos\RegisterUserDto.cs" />
+    <Compile Include="Dtos\UpdateBugDto.cs" />
     <Compile Include="Interfaces\IBugs.cs" />
     <Compile Include="Interfaces\IEncrypter.cs" />
     <Compile Include="Interfaces\IProjects.cs" />

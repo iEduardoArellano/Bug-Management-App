@@ -96,7 +96,7 @@ namespace Bug_Management_App.Repos
 
         public Bugs ExistingBugReport(int bugId)
         {
-            throw new NotImplementedException();
+            return _DB.Bugs.FirstOrDefault(b => b.BugId == bugId);
         }
     }
 }
