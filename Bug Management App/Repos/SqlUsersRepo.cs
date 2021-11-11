@@ -98,5 +98,11 @@ namespace Bug_Management_App.Repos
         {
             return _DB.Bugs.FirstOrDefault(b => b.BugId == bugId);
         }
+
+        public IEnumerable<Bugs> GetBugsPerProject(int projectId)
+        {
+            string query = "SELECT * FROM Bugs WHERE ProjectId = @p0";
+            return (IEnumerable<Bugs>)_DB.Projects.SqlQuery(query, projectId).DefaultIfEmpty();
+        }
     }
 }

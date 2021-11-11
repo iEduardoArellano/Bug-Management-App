@@ -48,7 +48,14 @@ namespace Bug_Management_App.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult updateBugStatus(int bugId,string status)
+        [HttpGet]
+        public List<Bugs> GetBugsPerProject(int projectId)
+        {
+           var reportedBugs = _bugs.GetBugsPerProject(projectId).ToList();
+            return reportedBugs;
+        }
+
+        public ActionResult updateBugStatus(int bugId, string status)
         {
             var currentBug =  _bugs.ExistingBugReport(bugId);
 
