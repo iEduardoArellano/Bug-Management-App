@@ -58,7 +58,7 @@ namespace Bug_Management_App.Controllers
         public ActionResult updateBugStatus(int bugId, string status)
         {
             var currentBug =  _bugs.ExistingBugReport(bugId);
-
+            currentBug.LastUpdateDate = DateTime.Today;
             currentBug.Status = status;
             _bugs.SaveChanges();
 
