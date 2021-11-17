@@ -53,7 +53,7 @@ namespace Bug_Management_App.Controllers
                 _bugs.CreateBug(bug);
                 _bugs.SaveChanges();
             }
-            return RedirectToAction("BugsIndex");
+            return RedirectToAction("BugsIndex", bug.ProjectId);
         }
 
         [HttpGet]
