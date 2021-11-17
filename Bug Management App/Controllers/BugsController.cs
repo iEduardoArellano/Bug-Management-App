@@ -20,10 +20,15 @@ namespace Bug_Management_App.Controllers
             _bugs = bugs;
             _users = users;
         }
-        public ActionResult Index(int projectId)
+        public ActionResult BugsIndex(int projectId)
         {
             ViewBag.projectId = projectId;
             return View();
+        }
+
+        public ActionResult CreateBug()
+        {
+            return View("BugsForm");
         }
         
         [HttpPost]
