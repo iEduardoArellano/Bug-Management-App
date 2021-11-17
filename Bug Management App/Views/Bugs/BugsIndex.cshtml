@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "BugsIndex";
+}
+<!----Filtros-->
+<div>
+    <ul class="nav filters-style nav-pills ">
+        <li class="nav-item">
+            <a class="nav-link">A</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link">E</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link">I</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link">O</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link">U</a>
+        </li>
+    </ul>
+</div>
+
+<div class="container-style container">
+    <div class="scrollbar">
+        <div class="row projects-dashboard">
+          
+                <div class="column">
+                    <a href="@Url.Action("ViewG","Projects")" target="_blank">
+                        <div class="card">
+                            
+
+                        </div>
+                    </a>
+                    
+                   
+                </div>
+
+        </div>
+    </div>
+    <a class="float" href="@Url.Action( "BugsForm", "Bugs")"><p class="plus">+</p></a>
+    
+</div>
+

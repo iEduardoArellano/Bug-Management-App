@@ -9,7 +9,11 @@ namespace Bug_Management_App.Controllers
     public class BugsController : Controller
     {
         // GET: Bugs
-        public ActionResult Index()
+        public ActionResult BugsForm()
+        {
+            return View();
+        }
+        public ActionResult BugsIndex()
         {
             return View();
         }
