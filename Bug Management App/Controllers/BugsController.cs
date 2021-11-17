@@ -26,14 +26,16 @@ namespace Bug_Management_App.Controllers
             return View();
         }
 
-        public ActionResult CreateBug()
+        public ActionResult CreateBug(int projectId)
         {
-            return View("BugsForm");
+            Bugs projectIdInBug = new Bugs();
+            projectIdInBug.ProjectId = projectId;
+            return View("BugsForm", projectIdInBug);
         }
         
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateBug(Bugs bug, HttpPostedFileBase bugImage)
+        public ActionResult Create(Bugs bug, HttpPostedFileBase bugImage)
         {
             var currentUser = _users.GetUserByUserName(User.Identity.Name);
 
@@ -42,6 +44,7 @@ namespace Bug_Management_App.Controllers
                 bug.CreationDate = DateTime.Today;
                 bug.LastUpdateDate = DateTime.Today;
                 bug.ReportedByUser = currentUser.Id;
+                bug.AsignedToUser = currentUser.Id;
                 if (bugImage != null)
                 {
                     bug.Image = new byte[bugImage.ContentLength];
@@ -50,7 +53,7 @@ namespace Bug_Management_App.Controllers
                 _bugs.CreateBug(bug);
                 _bugs.SaveChanges();
             }
-            return RedirectToAction("Index");
+            return RedirectToAction("BugsIndex");
         }
 
         [HttpGet]
