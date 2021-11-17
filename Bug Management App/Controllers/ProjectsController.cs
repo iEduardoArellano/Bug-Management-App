@@ -67,6 +67,11 @@ namespace Bug_Management_App.Controllers
         {
             return View();
         }
+        
+        public ActionResult ViewG()
+        {
+            return View();
+        }
 
         [HttpPost]
         [ValidateAntiForgeryToken]

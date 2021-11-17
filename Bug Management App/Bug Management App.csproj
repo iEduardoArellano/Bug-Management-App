@@ -407,6 +407,8 @@
     <Content Include="bin\Unity.Container.pdb" />
     <Content Include="bin\Unity.Mvc5.dll" />
     <Content Include="bin\WebGrease.dll" />
+    <Content Include="ContentFormViews\bootstrap.css" />
+    <Content Include="ContentFormViews\FormStyle.css" />
     <Content Include="ContentViews\bootstrap.css" />
     <Content Include="ContentViews\loginStyle.css" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -527,7 +529,9 @@
     <Content Include="Views\Projects\_ViewStart.cshtml" />
     <Content Include="Views\Projects\Edit.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
-    <Content Include="Views\Bugs\Index.cshtml" />
+    <Content Include="Views\Bugs\BugsForm.cshtml" />
+    <Content Include="Views\Projects\ViewG.cshtml" />
+    <Content Include="Views\Bugs\BugsIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

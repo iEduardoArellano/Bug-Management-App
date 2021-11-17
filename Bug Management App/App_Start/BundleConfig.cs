@@ -31,6 +31,10 @@ namespace Bug_Management_App
                        "~/ContentViews/loginStyle.css",
                      "~/ContentViews/bootstrap.css"));
 
+            bundles.Add(new StyleBundle("~/ContentFormViews/css").Include(
+                      "~/ContentFormViews/FormStyle.css",
+                    "~/ContentFormViews/bootstrap.css"));
+
         }
     }
 }

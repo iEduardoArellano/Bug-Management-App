@@ -3,65 +3,81 @@
 @{
     ViewBag.Title = "Edit";
 }
+<style type="text/css">
+    body {
+        background: #dddddd !important;
+    }
+</style>
 
 @using (Html.BeginForm("Edit", "Projects", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     
-    <div class="form-horizontal">
-        <div class="title-text">Editar proyecto</div>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.ProjectId)
+<div class="container">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div style="height: 100vmin" class="forms-wrap col-md-8">
+            <div class="form-horizontal">
+                <div class="forms-html">
+                    <div class="title-text">EDITAR PROYECTO</div>
+                    <div class="form-content">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.HiddenFor(model => model.ProjectId)
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.CompanyName, htmlAttributes: new { @class = "project-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.CompanyName, new { htmlAttributes = new { @class = "project-input" } })
-                @Html.ValidationMessageFor(model => model.CompanyName, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.CompanyName, htmlAttributes: new { @class = "project-label col-md-2" })
+                            <div class="col-md-12">
+                                @Html.EditorFor(model => model.CompanyName, new { htmlAttributes = new { @class = "project-input" } })
+                                @Html.ValidationMessageFor(model => model.CompanyName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Logo, htmlAttributes: new { @class = "project-label col-md-2" })
-            <div class="col-md-10">
-                <img src="@ViewBag.ImageData" width="50" height="50" />
-                <input type="file" name="imageLogo" accept="images/*" />
-            </div>
-        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Logo, htmlAttributes: new { @class = "project-label col-md-2" })
+                            <div class="col-md-12">
+                                <img src="@ViewBag.ImageData" width="50" height="50" />
+                                <input  type="file" name="imageLogo" accept="images/*" />
+                            </div>
+                        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.ProjectManager, htmlAttributes: new { @class = "project-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ProjectManager, new { htmlAttributes = new { @class = "project-input" } })
-                @Html.ValidationMessageFor(model => model.ProjectManager, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ProjectManager, htmlAttributes: new { @class = "project-label col-md-2" })
+                            <div class="col-md-12">
+                                @Html.EditorFor(model => model.ProjectManager, new { htmlAttributes = new { @class = "project-input" } })
+                                @Html.ValidationMessageFor(model => model.ProjectManager, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "project-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Status, new { htmlAttributes = new { @class = "project-input" } })
-                @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "project-label col-md-2" })
+                            <div class="col-md-12">
+                                @Html.EditorFor(model => model.Status, new { htmlAttributes = new { @class = "project-input" } })
+                                @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.ProjectName, htmlAttributes: new { @class = "project-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ProjectName, new { htmlAttributes = new { @class = "project-input" } })
-                @Html.ValidationMessageFor(model => model.ProjectName, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ProjectName, htmlAttributes: new { @class = "project-label col-md-2" })
+                            <div class="col-md-12">
+                                @Html.EditorFor(model => model.ProjectName, new { htmlAttributes = new { @class = "project-input" } })
+                                @Html.ValidationMessageFor(model => model.ProjectName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
 
-        <div class="form-group">
-            <div class="project-label col-md-offset-2 col-md-12">
-                <input type="submit" value="GUARDAR" class="project-btn" />
+                        <div class="form-group">
+                            <div class="project-label col-offset-9 col-sm-8">
+                                <input type="submit" value="GUARDAR" class="project-btn" />
+                            </div>
+                        </div>
+                        <div>
+                            @Html.ActionLink("Back to List", "Index", "Projects")
+                        </div>
+                    </div>        
+                </div>               
             </div>
         </div>
     </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
 </div>
+            }
+
+           
