@@ -23,7 +23,8 @@ namespace Bug_Management_App.Controllers
         public ActionResult BugsIndex(int projectId)
         {
             ViewBag.projectId = projectId;
-            return View();
+            var reportedBugs = _bugs.GetBugsPerProject(projectId).ToList();
+            return View(reportedBugs);
         }
 
         public ActionResult CreateBug(int projectId)
@@ -56,12 +57,7 @@ namespace Bug_Management_App.Controllers
             return RedirectToAction("BugsIndex","Bugs", new { projectId = bug.ProjectId});
         }
 
-        [HttpGet]
-        public List<Bugs> GetBugsPerProject(int projectId)
-        {
-           var reportedBugs = _bugs.GetBugsPerProject(projectId).ToList();
-            return reportedBugs;
-        }
+        
 
         public ActionResult updateBugStatus(int bugId, string status)
         {

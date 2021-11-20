@@ -102,7 +102,7 @@ namespace Bug_Management_App.Repos
         public IEnumerable<Bugs> GetBugsPerProject(int projectId)
         {
             string query = "SELECT * FROM Bugs WHERE ProjectId = @p0";
-            return (IEnumerable<Bugs>)_DB.Projects.SqlQuery(query, projectId).DefaultIfEmpty();
+            return _DB.Bugs.SqlQuery(query, projectId).DefaultIfEmpty();
         }
     }
 }
