@@ -110,15 +110,12 @@
     width: 100%;
     text-align: center;
 }
-.plus-sign {
-
-}
 .float {
     position: fixed;
     width: 60px;
     height: 60px;
-    bottom: 50px;
-    right: 55px;
+    bottom: 10%;
+    right: 7%;
     background-color: #337ab7;
     color: #FFF;
     border-radius: 50px;
@@ -211,3 +208,61 @@
     }
 
 /*Bugs cards*/
+
+
+.bugs-column {
+    float: left;
+    width: 100%;
+    padding: 10px 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+
+
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.25);
+}
+
+/* Responsive columns */
+@media screen and (max-width: 960px) {
+    .column {
+        width: 50%;
+        display: block;
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .column {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+    }
+}
+
+/* Style the counter cards */
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    text-align: center;
+    background-color: #f1f1f1;
+}
+
+.link-style {
+    text-decoration: none;
+    color: #585858;
+}
+
+    .link-style:hover {
+        text-decoration: none;
+        color: #585858;
+    }

@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<Bug_Management_App.Models.Bugs>
 @{
     ViewBag.Title = "BugsIndex";
 }
@@ -26,21 +26,21 @@
 <div class="container-style container">
     <div class="scrollbar">
         <div class="row projects-dashboard">
-          
-                <div class="column">
-                    <a href="@Url.Action("ViewG","Projects")" target="_blank">
+            @foreach (var item in Model.Select((value, index) => new { value, index }))
+            {
+                <div class="bugs-column">
+                    <a href="@Url.Action("ViewG", "Projects")" >
                         <div class="card">
-                            
-
+                            <div class="row">
+                                <h3></h3>
+                            </div>
                         </div>
                     </a>
-                    
-                   
                 </div>
-
+            }
         </div>
     </div>
     <a class="float" href="@Url.Action("CreateBug", "Bugs", new {projectId = ViewBag.projectId })"><p class="plus">+</p></a>
-    
+
 </div>
 
