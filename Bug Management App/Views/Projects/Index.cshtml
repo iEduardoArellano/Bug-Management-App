@@ -62,17 +62,19 @@
 
                         </div>
                     </a>
-                    
-                   
+
+
                 </div>
                 if ((item.index + 1) % 4 == 0 || item.index + 1 == Model.Count())
                 {
                     @Html.Raw("</div>")
                 }
             }
+            <a class="float" href="@Url.Action( "Create", "Projects")"><p class="plus">+</p></a>
         </div>
+        
     </div>
-    <a class="float" href="@Url.Action( "Create", "Projects")"><p class="plus">+</p></a>
+
 </div>
 
 

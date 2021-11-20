@@ -66,7 +66,7 @@ namespace Bug_Management_App.Controllers
             currentBug.Status = status;
             _bugs.SaveChanges();
 
-            return RedirectToAction("Index");
+            return RedirectToAction("BugsIndex");
         }
 
         private string SetImageData(byte[] bytesImage)
