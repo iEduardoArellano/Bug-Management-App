@@ -20,5 +20,7 @@ namespace Bug_Management_App.Interfaces
         void DeleteProject(int projectId);
 
         void SaveChanges();
+
+        //IEnumerable<Users> GetProjectTeam(int projectId);
     }
 }
