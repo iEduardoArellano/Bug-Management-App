@@ -2,67 +2,85 @@
 @{
     ViewBag.Title = "Index";
 }
-
-<h2>Index</h2>
-
-<div>
-    <h4>Users</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.LastName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.LastName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.UserName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.UserName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-
-    </dl>
-</div>
-    @using (Html.BeginForm("SetRole", "Users", FormMethod.Post))
-    {
-        @Html.AntiForgeryToken()
-
-        <div class="form">
-            <div class="form-group">
-                @Html.DisplayNameFor(model => model.Role)
-                <div>
-                    @Html.DropDownListFor(model => model.Role, (IEnumerable<SelectListItem>)ViewBag.roles)
-                </div>
-
-            </div>
-            <div class="form-horizontal">
-                <div class="form-group">
-                    <input type="submit" value="GUARDAR" class="project-btn"/>
-                </div>
-            </div>
-        </div>
+<style type="text/css">
+    body {
+        background: #dddddd !important;
     }
-    <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-        @Html.ActionLink("Back to List", "Index")
-    </p>
+</style>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div style="height: 92.3vmin" class="forms-wrap col-md-8">
+            <div class="form-horizontal">
+                <div class="forms-html">
+                    <div class="title-text">CONFIGURACIÓN</div>
+                    <div class="form-content">
+                        <dl class="dl-horizontal">
+                            <dt class="group form-group">
+                                @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "project-label  col-md-6" })
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Name)
+                            </dd>
+
+                            <dt class="group form-group">
+                                @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "project-label  col-md-6" })
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.LastName)
+                            </dd>
+
+                            <dt class="group form-group">
+                                @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "project-label  col-md-6" })
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.UserName)
+                            </dd>
+
+                            <dt class="group form-group">
+                                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "project-label  col-md-6" })
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Email)
+                            </dd>
+
+                        </dl>
+
+                        @using (Html.BeginForm("SetRole", "Users", FormMethod.Post))
+                        {
+                            @Html.AntiForgeryToken()
+
+                            <div class="form-horizontal">
+                                <div class="group form-group">
+                                    @Html.LabelFor(model => model.Role, htmlAttributes: new { @class = "project-label  col-md-4" })
+                                    <div>
+                                        @Html.DropDownListFor(model => model.Role, (IEnumerable<SelectListItem>)ViewBag.roles)
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="project-label col-offset-9 col-sm-8">
+                                        <input type="submit" value="GUARDAR" class="project-btn" />
+                                    </div>
+                                </div>  
+                            </div>
+                        }
+                        <p>
+                            @Html.ActionLink("Back", "Index", "Projects")
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+            
+            
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+</div>
+
