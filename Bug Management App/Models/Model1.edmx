@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="UsersDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="UsersDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Bugs">
           <Key>
             <PropertyRef Name="BugId" />
@@ -41,7 +41,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="Role" Type="varchar" MaxLength="20" Nullable="false" />
         </EntityType>
         <EntityType Name="Users">
@@ -49,13 +49,46 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="LastName" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="UserName" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="LastName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="Role" Type="int" />
         </EntityType>
+        <EntityType Name="UsersProjects">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="ProjectId" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="ProjectId" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__UsersProj__Proje__2DE6D218">
+          <End Role="Projects" Type="Self.Projects" Multiplicity="1" />
+          <End Role="UsersProjects" Type="Self.UsersProjects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Projects">
+              <PropertyRef Name="ProjectId" />
+            </Principal>
+            <Dependent Role="UsersProjects">
+              <PropertyRef Name="ProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UsersProj__UserI__2CF2ADDF">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="UsersProjects" Type="Self.UsersProjects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UsersProjects">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_UserID_CreatorID">
           <End Role="Users" Type="Self.Users" Multiplicity="1" />
           <End Role="Projects" Type="Self.Projects" Multiplicity="*" />
@@ -73,15 +106,44 @@
           <EntitySet Name="Projects" EntityType="Self.Projects" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UsersProjects" EntityType="Self.UsersProjects" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__UsersProj__Proje__2DE6D218" Association="Self.FK__UsersProj__Proje__2DE6D218">
+            <End Role="Projects" EntitySet="Projects" />
+            <End Role="UsersProjects" EntitySet="UsersProjects" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UsersProj__UserI__2CF2ADDF" Association="Self.FK__UsersProj__UserI__2CF2ADDF">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UsersProjects" EntitySet="UsersProjects" />
+          </AssociationSet>
           <AssociationSet Name="FK_UserID_CreatorID" Association="Self.FK_UserID_CreatorID">
             <End Role="Users" EntitySet="Users" />
             <End Role="Projects" EntitySet="Projects" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="UsersDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Bugs">
+          <Key>
+            <PropertyRef Name="BugId" />
+          </Key>
+          <Property Name="BugId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="OperatingSystem" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="OSVersion" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AppVersion" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Status" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="LastUpdateDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ReportedByUser" Type="Int32" Nullable="false" />
+          <Property Name="AsignedToUser" Type="Int32" Nullable="false" />
+          <Property Name="ProjectId" Type="Int32" Nullable="false" />
+          <Property Name="VideoLink" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
         <EntityType Name="Projects">
           <Key>
             <PropertyRef Name="ProjectId" />
@@ -94,13 +156,14 @@
           <Property Name="ProjectName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Creator" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="UsersProjects" Relationship="Self.FK__UsersProj__Proje__2DE6D218" FromRole="Projects" ToRole="UsersProjects" />
           <NavigationProperty Name="Users" Relationship="Self.FK_UserID_CreatorID" FromRole="Projects" ToRole="Users" />
         </EntityType>
         <EntityType Name="Roles">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="Role" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
         <EntityType Name="Users">
@@ -108,14 +171,38 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Role" Type="Int32" />
           <NavigationProperty Name="Projects" Relationship="Self.FK_UserID_CreatorID" FromRole="Users" ToRole="Projects" />
+          <NavigationProperty Name="UsersProjects" Relationship="Self.FK__UsersProj__UserI__2CF2ADDF" FromRole="Users" ToRole="UsersProjects" />
         </EntityType>
+        <EntityType Name="UsersProjects">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="ProjectId" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="ProjectId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Projects" Relationship="Self.FK__UsersProj__Proje__2DE6D218" FromRole="UsersProjects" ToRole="Projects" />
+          <NavigationProperty Name="Users" Relationship="Self.FK__UsersProj__UserI__2CF2ADDF" FromRole="UsersProjects" ToRole="Users" />
+        </EntityType>
+        <Association Name="FK__UsersProj__Proje__2DE6D218">
+          <End Role="Projects" Type="Self.Projects" Multiplicity="1" />
+          <End Role="UsersProjects" Type="Self.UsersProjects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Projects">
+              <PropertyRef Name="ProjectId" />
+            </Principal>
+            <Dependent Role="UsersProjects">
+              <PropertyRef Name="ProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_UserID_CreatorID">
           <End Role="Users" Type="Self.Users" Multiplicity="1" />
           <End Role="Projects" Type="Self.Projects" Multiplicity="*" />
@@ -128,41 +215,63 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="UsersDBEntities" annotation:LazyLoadingEnabled="true">
+        <Association Name="FK__UsersProj__UserI__2CF2ADDF">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="UsersProjects" Type="Self.UsersProjects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UsersProjects">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Bugs" EntityType="Self.Bugs" />
           <EntitySet Name="Projects" EntityType="Self.Projects" />
           <EntitySet Name="Roles" EntityType="Self.Roles" />
           <EntitySet Name="Users" EntityType="Self.Users" />
+          <EntitySet Name="UsersProjects" EntityType="Self.UsersProjects" />
+          <AssociationSet Name="FK__UsersProj__Proje__2DE6D218" Association="Self.FK__UsersProj__Proje__2DE6D218">
+            <End Role="Projects" EntitySet="Projects" />
+            <End Role="UsersProjects" EntitySet="UsersProjects" />
+          </AssociationSet>
           <AssociationSet Name="FK_UserID_CreatorID" Association="Self.FK_UserID_CreatorID">
             <End Role="Users" EntitySet="Users" />
             <End Role="Projects" EntitySet="Projects" />
           </AssociationSet>
-          <EntitySet Name="Bugs" EntityType="UsersDBModel.Bugs" />
+          <AssociationSet Name="FK__UsersProj__UserI__2CF2ADDF" Association="Self.FK__UsersProj__UserI__2CF2ADDF">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UsersProjects" EntitySet="UsersProjects" />
+          </AssociationSet>
         </EntityContainer>
-        <EntityType Name="Bugs">
-          <Key>
-            <PropertyRef Name="BugId" />
-          </Key>
-          <Property Name="BugId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
-          <Property Name="Description" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="OperatingSystem" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="OSVersion" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
-          <Property Name="AppVersion" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
-          <Property Name="Status" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
-          <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="LastUpdateDate" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="ReportedByUser" Type="Int32" Nullable="false" />
-          <Property Name="AsignedToUser" Type="Int32" Nullable="false" />
-          <Property Name="ProjectId" Type="Int32" Nullable="false" />
-          <Property Name="VideoLink" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="UsersDBModelStoreContainer" CdmEntityContainer="UsersDBEntities">
+        <EntityContainerMapping StorageEntityContainer="UsersDBModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="Bugs">
+            <EntityTypeMapping TypeName="UsersDBModel.Bugs">
+              <MappingFragment StoreEntitySet="Bugs">
+                <ScalarProperty Name="BugId" ColumnName="BugId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="OperatingSystem" ColumnName="OperatingSystem" />
+                <ScalarProperty Name="OSVersion" ColumnName="OSVersion" />
+                <ScalarProperty Name="AppVersion" ColumnName="AppVersion" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+                <ScalarProperty Name="ReportedByUser" ColumnName="ReportedByUser" />
+                <ScalarProperty Name="AsignedToUser" ColumnName="AsignedToUser" />
+                <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+                <ScalarProperty Name="VideoLink" ColumnName="VideoLink" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Projects">
             <EntityTypeMapping TypeName="UsersDBModel.Projects">
               <MappingFragment StoreEntitySet="Projects">
@@ -198,23 +307,12 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Bugs">
-            <EntityTypeMapping TypeName="UsersDBModel.Bugs">
-              <MappingFragment StoreEntitySet="Bugs">
-                <ScalarProperty Name="VideoLink" ColumnName="VideoLink" />
+          <EntitySetMapping Name="UsersProjects">
+            <EntityTypeMapping TypeName="UsersDBModel.UsersProjects">
+              <MappingFragment StoreEntitySet="UsersProjects">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
-                <ScalarProperty Name="AsignedToUser" ColumnName="AsignedToUser" />
-                <ScalarProperty Name="ReportedByUser" ColumnName="ReportedByUser" />
-                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
-                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
-                <ScalarProperty Name="AppVersion" ColumnName="AppVersion" />
-                <ScalarProperty Name="OSVersion" ColumnName="OSVersion" />
-                <ScalarProperty Name="OperatingSystem" ColumnName="OperatingSystem" />
-                <ScalarProperty Name="Image" ColumnName="Image" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="BugId" ColumnName="BugId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -11,11 +11,11 @@ namespace Bug_Management_App.Repos
 {
     public class SqlUsersRepo : IRegisterUsers, IUsers, IProjects, IRoles, IBugs
     {
-        private readonly UsersDBEntities _DB;
+        private readonly Entities _DB;
 
         public SqlUsersRepo()
         {
-            _DB = new UsersDBEntities();
+            _DB = new Entities();
             
         }
 

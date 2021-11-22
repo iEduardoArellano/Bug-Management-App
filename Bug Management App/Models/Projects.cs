@@ -14,6 +14,12 @@ namespace Bug_Management_App.Models
     
     public partial class Projects
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Projects()
+        {
+            this.UsersProjects = new HashSet<UsersProjects>();
+        }
+    
         public int ProjectId { get; set; }
         public string CompanyName { get; set; }
         public byte[] Logo { get; set; }
@@ -23,6 +29,8 @@ namespace Bug_Management_App.Models
         public System.DateTime CreationDate { get; set; }
         public int Creator { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<UsersProjects> UsersProjects { get; set; }
         public virtual Users Users { get; set; }
     }
 }

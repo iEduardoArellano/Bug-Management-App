@@ -18,6 +18,7 @@ namespace Bug_Management_App.Models
         public Users()
         {
             this.Projects = new HashSet<Projects>();
+            this.UsersProjects = new HashSet<UsersProjects>();
         }
     
         public int Id { get; set; }
@@ -30,5 +31,7 @@ namespace Bug_Management_App.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Projects> Projects { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<UsersProjects> UsersProjects { get; set; }
     }
 }
