@@ -223,6 +223,7 @@
     <Compile Include="Dtos\LoginUserDto.cs" />
     <Compile Include="Dtos\RegisterUserDto.cs" />
     <Compile Include="Dtos\UpdateBugDto.cs" />
+    <Compile Include="Dtos\UsersListForTeamsDto.cs" />
     <Compile Include="Interfaces\IBugs.cs" />
     <Compile Include="Interfaces\IEncrypter.cs" />
     <Compile Include="Interfaces\IProjects.cs" />
@@ -535,6 +536,7 @@
     <Content Include="Views\Bugs\BugsForm.cshtml" />
     <Content Include="Views\Projects\ViewG.cshtml" />
     <Content Include="Views\Bugs\BugsIndex.cshtml" />
+    <Content Include="Views\Projects\Teams.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

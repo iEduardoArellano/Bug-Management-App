@@ -1,4 +1,5 @@
-﻿using Bug_Management_App.Models;
+﻿using Bug_Management_App.Dtos;
+using Bug_Management_App.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,7 @@ namespace Bug_Management_App.Interfaces
 
         void SaveChanges();
 
-        //IEnumerable<Users> GetProjectTeam(int projectId);
+        IEnumerable<UsersListForTeamsDto> GetUsersListForTeams();
+
     }
 }
