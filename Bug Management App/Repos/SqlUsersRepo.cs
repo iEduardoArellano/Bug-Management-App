@@ -77,7 +77,6 @@ namespace Bug_Management_App.Repos
             }
 
             return false;
-           
         }
 
         public List<Roles> GetRoles()
@@ -104,5 +103,10 @@ namespace Bug_Management_App.Repos
             string query = "SELECT * FROM Bugs WHERE ProjectId = @p0";
             return _DB.Bugs.SqlQuery(query, projectId).DefaultIfEmpty();
         }
+
+        /*public IEnumerable<Users> GetProjectTeam(int projectId)
+       {
+            string query = "SELECT * FROM Users WHERE ProjectId"
+        }*/
     }
 }
