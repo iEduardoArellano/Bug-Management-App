@@ -7,7 +7,7 @@
     <Property Name="BugId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Title" Type="varchar" MaxLength="40" Nullable="false" />
     <Property Name="Description" Type="varchar" MaxLength="255" Nullable="false" />
-    <Property Name="Image" Type="varbinary(max)" />
+    <Property Name="Image" Type="varbinary(max)" Nullable="false" />
     <Property Name="OperatingSystem" Type="varchar" MaxLength="30" Nullable="false" />
     <Property Name="OSVersion" Type="varchar" MaxLength="15" Nullable="false" />
     <Property Name="AppVersion" Type="varchar" MaxLength="15" Nullable="false" />
@@ -51,6 +51,39 @@
     <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Role" Type="int" />
   </EntityType>
+  <EntityType Name="UsersProjects">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="ProjectId" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="ProjectId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__UsersProj__Proje__40F9A68C">
+    <End Role="Projects" Type="Self.Projects" Multiplicity="1" />
+    <End Role="UsersProjects" Type="Self.UsersProjects" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Projects">
+        <PropertyRef Name="ProjectId" />
+      </Principal>
+      <Dependent Role="UsersProjects">
+        <PropertyRef Name="ProjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UsersProj__UserI__40058253">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="UsersProjects" Type="Self.UsersProjects" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UsersProjects">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_UserID_CreatorID">
     <End Role="Users" Type="Self.Users" Multiplicity="1" />
     <End Role="Projects" Type="Self.Projects" Multiplicity="*" />
@@ -68,6 +101,15 @@
     <EntitySet Name="Projects" EntityType="Self.Projects" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UsersProjects" EntityType="Self.UsersProjects" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__UsersProj__Proje__40F9A68C" Association="Self.FK__UsersProj__Proje__40F9A68C">
+      <End Role="Projects" EntitySet="Projects" />
+      <End Role="UsersProjects" EntitySet="UsersProjects" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UsersProj__UserI__40058253" Association="Self.FK__UsersProj__UserI__40058253">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="UsersProjects" EntitySet="UsersProjects" />
+    </AssociationSet>
     <AssociationSet Name="FK_UserID_CreatorID" Association="Self.FK_UserID_CreatorID">
       <End Role="Users" EntitySet="Users" />
       <End Role="Projects" EntitySet="Projects" />

@@ -263,6 +263,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UsersDB.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\UsersProjects.cs">
+      <DependentUpon>UsersDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Profiles\UserProfiles.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

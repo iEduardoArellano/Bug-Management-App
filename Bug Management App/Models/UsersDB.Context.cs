@@ -13,10 +13,10 @@ namespace Bug_Management_App.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class UsersDBEntities : DbContext
+    public partial class Entities : DbContext
     {
-        public UsersDBEntities()
-            : base("name=UsersDBEntities")
+        public Entities()
+            : base("name=Entities")
         {
         }
     
@@ -25,9 +25,10 @@ namespace Bug_Management_App.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Bugs> Bugs { get; set; }
         public virtual DbSet<Projects> Projects { get; set; }
         public virtual DbSet<Roles> Roles { get; set; }
         public virtual DbSet<Users> Users { get; set; }
-        public virtual DbSet<Bugs> Bugs { get; set; }
+        public virtual DbSet<UsersProjects> UsersProjects { get; set; }
     }
 }
