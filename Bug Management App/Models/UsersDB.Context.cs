@@ -30,5 +30,7 @@ namespace Bug_Management_App.Models
         public virtual DbSet<Roles> Roles { get; set; }
         public virtual DbSet<Users> Users { get; set; }
         public virtual DbSet<UsersProjects> UsersProjects { get; set; }
+
+        public System.Data.Entity.DbSet<Bug_Management_App.Dtos.UsersListForTeamsDto> UsersListForTeamsDtoes { get; set; }
     }
 }

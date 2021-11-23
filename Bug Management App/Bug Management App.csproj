@@ -536,7 +536,8 @@
     <Content Include="Views\Bugs\BugsForm.cshtml" />
     <Content Include="Views\Projects\ViewG.cshtml" />
     <Content Include="Views\Bugs\BugsIndex.cshtml" />
-    <Content Include="Views\Projects\Teams.cshtml" />
+    <Content Include="Views\Projects\UsersForTeams.cshtml" />
+    <Content Include="Views\Projects\Team.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
