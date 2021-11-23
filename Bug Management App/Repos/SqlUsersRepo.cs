@@ -108,5 +108,10 @@ namespace Bug_Management_App.Repos
         {
             return _DB.Users.Select(u => new UsersListForTeamsDto { Id = u.Id, Name = u.Name, LastName = u.LastName, Role = u.Role});
         }
+
+        public void SetUserToProject(UsersProjects userProject)
+        {
+            _DB.UsersProjects.Add(userProject);
+        }
     }
 }

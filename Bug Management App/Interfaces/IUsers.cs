@@ -19,5 +19,7 @@ namespace Bug_Management_App.Interfaces
         bool UserExists(string userName);
 
         void SaveChanges();
+
+        void SetUserToProject(UsersProjects userProject);
     }
 }
