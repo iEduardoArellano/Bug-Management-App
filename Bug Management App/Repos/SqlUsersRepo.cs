@@ -104,9 +104,9 @@ namespace Bug_Management_App.Repos
             return _DB.Bugs.SqlQuery(query, projectId).DefaultIfEmpty();
         }
 
-        /*public IEnumerable<Users> GetProjectTeam(int projectId)
-       {
-            string query = "SELECT * FROM Users WHERE ProjectId"
-        }*/
+        public IEnumerable<UsersListForTeamsDto> GetUsersListForTeams()
+        {
+            return _DB.Users.Select(u => new UsersListForTeamsDto { Id = u.Id, Name = u.Name, LastName = u.LastName, Role = u.Role});
+        }
     }
 }

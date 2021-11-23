@@ -73,6 +73,13 @@ namespace Bug_Management_App.Controllers
             return View();
         }
 
+        public ActionResult Teams()
+        {
+            var usersForTeams = _projects.GetUsersListForTeams();
+
+            return View(usersForTeams);
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Projects editedProject, HttpPostedFileBase imageLogo)
