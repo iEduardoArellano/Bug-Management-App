@@ -113,5 +113,22 @@ namespace Bug_Management_App.Repos
         {
             _DB.UsersProjects.Add(userProject);
         }
+
+        public IEnumerable<UsersListForTeamsDto> GetUsersPerProjects(int projectId)
+        {
+            var team = (from u in _DB.Users
+                     join up in _DB.UsersProjects on u.Id equals up.UserId
+                     join p in _DB.Projects on up.ProjectId equals p.ProjectId
+                     where up.ProjectId == projectId
+                     select new UsersListForTeamsDto
+                     {
+                         Id = u.Id,
+                         Name = u.Name,
+                         LastName = u.LastName,
+                         Role = u.Role
+                     });
+
+            return team;
+        }
     }
 }
