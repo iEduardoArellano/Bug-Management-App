@@ -74,6 +74,19 @@ namespace Bug_Management_App.Controllers
             return View(usersForTeams);
         }
 
+        public ActionResult SetUserToProject(int userId, int projectId)
+        {
+            UsersProjects userProject = new UsersProjects
+            {
+                UserId = userId,
+                ProjectId = projectId
+            };
+            _users.SetUserToProject(userProject);
+            _users.SaveChanges();
+
+            return RedirectToAction("Teams", new {projectId = userProject.ProjectId });
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Projects editedProject, HttpPostedFileBase imageLogo)

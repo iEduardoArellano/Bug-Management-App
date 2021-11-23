@@ -41,16 +41,7 @@ namespace Bug_Management_App.Controllers
             _users.SaveChanges();
 
             return RedirectToAction("Index", "Projects");
-        }
-
-        [HttpPost]
-        public ActionResult SetUserToProject(UsersProjects userProject)
-        {
-            _users.SetUserToProject(userProject);
-            _users.SaveChanges();
-
-            return RedirectToAction("Teams", "Projects", userProject.ProjectId);
-        }
+        }  
 
     }
 }

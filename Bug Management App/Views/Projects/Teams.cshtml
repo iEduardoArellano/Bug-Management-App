@@ -35,7 +35,7 @@
             @Html.DisplayFor(modelItem => item.Role)
         </td>
         <td>
-            @Html.ActionLink("Agregar al proyecto", "SetUserToProject", new { })
+            @Html.ActionLink("Agregar al proyecto", "SetUserToProject", "Projects" ,new { userId = item.Id, projectId = ViewBag.projectId}, null)
         </td>
     </tr>
 }
