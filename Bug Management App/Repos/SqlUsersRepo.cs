@@ -99,7 +99,7 @@ namespace Bug_Management_App.Repos
         public IEnumerable<Bugs> GetBugsPerProject(int projectId)
         {
             string query = "SELECT * FROM Bugs WHERE ProjectId = @p0";
-            return _DB.Bugs.SqlQuery(query, projectId);
+            return _DB.Bugs.SqlQuery(query, projectId).DefaultIfEmpty();
         }
 
         public IEnumerable<UsersListForTeamsDto> GetUsersListForTeams()
@@ -112,10 +112,21 @@ namespace Bug_Management_App.Repos
             _DB.UsersProjects.Add(userProject);
         }
 
-        public IEnumerable<UsersListForTeamsDto> GetUsersPerProjects()
+        public IEnumerable<UsersListForTeamsDto> GetUsersPerProjects(int projectId)
         {
+            var x = (from u in _DB.Users
+                     join up in _DB.UsersProjects on u.Id equals up.UserId
+                     join p in _DB.Projects on up.ProjectId equals p.ProjectId
+                     where up.ProjectId == projectId
+                     select new UsersListForTeamsDto
+                     {
+                         Id = u.Id,
+                         Name = u.Name,
+                         LastName = u.LastName,
+                         Role = u.Role
+                     });
 
-            throw new NotImplementedException();
+            return x;
         }
     }
 }
