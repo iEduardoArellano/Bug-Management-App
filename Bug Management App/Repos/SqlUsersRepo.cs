@@ -15,8 +15,7 @@ namespace Bug_Management_App.Repos
 
         public SqlUsersRepo()
         {
-            _DB = new Entities();
-            
+            _DB = new Entities(); 
         }
 
         public Users GetUserByUserName(string userName)
@@ -55,7 +54,6 @@ namespace Bug_Management_App.Repos
         public void CreateProject(Projects projectToCreate)
         {
             _DB.Projects.Add(projectToCreate);
-
         }
 
         public Projects GetProjectById(int projectId)
