@@ -1,5 +1,6 @@
 ﻿using Bug_Management_App.Dtos;
 using Bug_Management_App.Interfaces;
+using Bug_Management_App.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,6 +41,15 @@ namespace Bug_Management_App.Controllers
             _users.SaveChanges();
 
             return RedirectToAction("Index", "Projects");
+        }
+
+        [HttpPost]
+        public ActionResult SetUserToProject(UsersProjects userProject)
+        {
+            _users.SetUserToProject(userProject);
+            _users.SaveChanges();
+
+            return RedirectToAction("Teams", "Projects", userProject.ProjectId);
         }
 
     }

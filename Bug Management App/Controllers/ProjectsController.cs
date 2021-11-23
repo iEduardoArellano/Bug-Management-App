@@ -37,7 +37,6 @@ namespace Bug_Management_App.Controllers
             return View(projects);
         }
 
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(CreateProjectDto createProject, HttpPostedFileBase imageLogo)
@@ -67,16 +66,11 @@ namespace Bug_Management_App.Controllers
         {
             return View();
         }
-        
-        public ActionResult ViewG()
-        {
-            return View();
-        }
 
-        public ActionResult Teams()
+        public ActionResult Teams(int projectId)
         {
             var usersForTeams = _projects.GetUsersListForTeams();
-
+            ViewBag.projectId = projectId;
             return View(usersForTeams);
         }
 
