@@ -24,5 +24,7 @@ namespace Bug_Management_App.Interfaces
 
         IEnumerable<UsersListForTeamsDto> GetUsersListForTeams();
 
+        IEnumerable<UsersListForTeamsDto> GetUsersPerProjects();
+
     }
 }

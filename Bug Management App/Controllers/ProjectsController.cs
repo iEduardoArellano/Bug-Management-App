@@ -67,11 +67,18 @@ namespace Bug_Management_App.Controllers
             return View();
         }
 
-        public ActionResult Teams(int projectId)
+        public ActionResult UsersForTeams(int projectId)
         {
-            var usersForTeams = _projects.GetUsersListForTeams();
+            var usersList = _projects.GetUsersListForTeams();
             ViewBag.projectId = projectId;
-            return View(usersForTeams);
+
+            return View(usersList);
+        }
+
+        public ActionResult Team(int projectId)
+        {
+            ViewBag.projectId = projectId;
+            return View();
         }
 
         public ActionResult SetUserToProject(int userId, int projectId)
