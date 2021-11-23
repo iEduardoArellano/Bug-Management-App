@@ -7,7 +7,7 @@
     <Property Name="BugId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Title" Type="varchar" MaxLength="40" Nullable="false" />
     <Property Name="Description" Type="varchar" MaxLength="255" Nullable="false" />
-    <Property Name="Image" Type="varbinary(max)" Nullable="false" />
+    <Property Name="Image" Type="varbinary(max)" />
     <Property Name="OperatingSystem" Type="varchar" MaxLength="30" Nullable="false" />
     <Property Name="OSVersion" Type="varchar" MaxLength="15" Nullable="false" />
     <Property Name="AppVersion" Type="varchar" MaxLength="15" Nullable="false" />
@@ -36,7 +36,7 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" />
     <Property Name="Role" Type="varchar" MaxLength="20" Nullable="false" />
   </EntityType>
   <EntityType Name="Users">
@@ -44,11 +44,11 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="LastName" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="UserName" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="LastName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="Role" Type="int" />
   </EntityType>
   <EntityType Name="UsersProjects">
@@ -60,7 +60,7 @@
     <Property Name="UserId" Type="int" Nullable="false" />
     <Property Name="ProjectId" Type="int" Nullable="false" />
   </EntityType>
-  <Association Name="FK__UsersProj__Proje__40F9A68C">
+  <Association Name="FK__UsersProj__Proje__2DE6D218">
     <End Role="Projects" Type="Self.Projects" Multiplicity="1" />
     <End Role="UsersProjects" Type="Self.UsersProjects" Multiplicity="*" />
     <ReferentialConstraint>
@@ -72,7 +72,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__UsersProj__UserI__40058253">
+  <Association Name="FK__UsersProj__UserI__2CF2ADDF">
     <End Role="Users" Type="Self.Users" Multiplicity="1" />
     <End Role="UsersProjects" Type="Self.UsersProjects" Multiplicity="*" />
     <ReferentialConstraint>
@@ -102,11 +102,11 @@
     <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UsersProjects" EntityType="Self.UsersProjects" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__UsersProj__Proje__40F9A68C" Association="Self.FK__UsersProj__Proje__40F9A68C">
+    <AssociationSet Name="FK__UsersProj__Proje__2DE6D218" Association="Self.FK__UsersProj__Proje__2DE6D218">
       <End Role="Projects" EntitySet="Projects" />
       <End Role="UsersProjects" EntitySet="UsersProjects" />
     </AssociationSet>
-    <AssociationSet Name="FK__UsersProj__UserI__40058253" Association="Self.FK__UsersProj__UserI__40058253">
+    <AssociationSet Name="FK__UsersProj__UserI__2CF2ADDF" Association="Self.FK__UsersProj__UserI__2CF2ADDF">
       <End Role="Users" EntitySet="Users" />
       <End Role="UsersProjects" EntitySet="UsersProjects" />
     </AssociationSet>
