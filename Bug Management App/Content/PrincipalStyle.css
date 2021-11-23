@@ -65,6 +65,8 @@
     height: 34px;
     padding: 6px 6px;
     border-radius: 5px;
+    border: none;
+    background-color: #cfcfcf;
 }
 .project-label {
     color: #585858;
