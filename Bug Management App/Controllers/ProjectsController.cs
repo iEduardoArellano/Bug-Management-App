@@ -78,7 +78,8 @@ namespace Bug_Management_App.Controllers
         public ActionResult Team(int projectId)
         {
             ViewBag.projectId = projectId;
-            return View();
+            var teamList =  _projects.GetUsersPerProjects(projectId);
+            return View(teamList);
         }
 
         public ActionResult SetUserToProject(int userId, int projectId)
