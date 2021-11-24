@@ -217,6 +217,12 @@
     width: 100%;
     padding: 10px 10px;
 }
+.stausBugs{
+    border-radius: 0px;
+}
+.bugsT{
+    text-align:center;
+}
 
 /* Remove extra left and right margins, due to padding */
 
