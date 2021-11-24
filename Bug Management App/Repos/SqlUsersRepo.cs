@@ -104,7 +104,16 @@ namespace Bug_Management_App.Repos
 
         public IEnumerable<UsersListForTeamsDto> GetUsersListForTeams()
         {
-            return _DB.Users.Select(u => new UsersListForTeamsDto { Id = u.Id, Name = u.Name, LastName = u.LastName, Role = u.Role});
+            var users = (from u in _DB.Users
+                         join r in _DB.Roles on u.Role equals r.Id
+                         select new UsersListForTeamsDto
+                         {
+                             Id = u.Id,
+                             Name = u.Name,
+                             LastName = u.LastName,
+                             Role = r.Role
+                         });
+            return users;
         }
 
         public void SetUserToProject(UsersProjects userProject)
@@ -114,17 +123,18 @@ namespace Bug_Management_App.Repos
 
         public IEnumerable<UsersListForTeamsDto> GetUsersPerProjects(int projectId)
         {
-            var x = (from u in _DB.Users
+            var x = from u in _DB.Users
                      join up in _DB.UsersProjects on u.Id equals up.UserId
                      join p in _DB.Projects on up.ProjectId equals p.ProjectId
+                     join r in _DB.Roles on u.Role equals r.Id
                      where up.ProjectId == projectId
                      select new UsersListForTeamsDto
                      {
                          Id = u.Id,
                          Name = u.Name,
                          LastName = u.LastName,
-                         Role = u.Role
-                     });
+                         Role = r.Role
+                     };
 
             return x;
         }
