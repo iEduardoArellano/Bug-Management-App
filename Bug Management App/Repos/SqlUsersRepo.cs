@@ -114,7 +114,7 @@ namespace Bug_Management_App.Repos
 
         public IEnumerable<UsersListForTeamsDto> GetUsersPerProjects(int projectId)
         {
-            var x = (from u in _DB.Users
+            var x = from u in _DB.Users
                      join up in _DB.UsersProjects on u.Id equals up.UserId
                      join p in _DB.Projects on up.ProjectId equals p.ProjectId
                      where up.ProjectId == projectId
@@ -124,7 +124,7 @@ namespace Bug_Management_App.Repos
                          Name = u.Name,
                          LastName = u.LastName,
                          Role = u.Role
-                     });
+                     };
 
             return x;
         }
