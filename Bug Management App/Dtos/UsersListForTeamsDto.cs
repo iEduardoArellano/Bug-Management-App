@@ -17,6 +17,6 @@ namespace Bug_Management_App.Dtos
         public string LastName { get; set; }
 
         [Display(Name = "Rol")]
-        public Nullable<int> Role { get; set; }
+        public string Role { get; set; }
     }
 }
