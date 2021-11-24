@@ -9,13 +9,27 @@
     padding-left: 0px;
     width: 95%;
 }
-.scrollbar{
+.scrollbar {
     right: 0px;
     top: 0px;
     overflow-x: hidden;
     overflow-y: scroll;
     height: 80vh;
 }
+.container.container-team {
+    background-color: #dddddd;
+    padding-right: 0px;
+    padding-left: 0px;
+    width: 95%;
+}
+.scrollbar-team {
+    right: 0px;
+    top: 0px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 75vh;
+}
+
 .projects-dashboard{
     padding: 10px 50px;
 }

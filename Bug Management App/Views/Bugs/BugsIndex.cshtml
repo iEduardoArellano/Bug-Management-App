@@ -19,7 +19,7 @@
                 foreach (var item in Model.Select((value, index) => new { value, index }))
                 {
                     <div class="bugs-column">
-                        <a class="link-style" href="@Url.Action("CreateBug", "Bugs")">
+                        <a class="link-style">
                             <div class="card">
                                 <div class="row">
                                     <h3>@item.value.Title</h3>

@@ -51,9 +51,10 @@
                                     @Html.ActionLink("Bugs", "BugsIndex", "Bugs", new { projectId = item.value.ProjectId }, new { @class = "btn" })
                                 </div>
                                 <div class=" col-md-6">
-                                    @Html.ActionLink("Team", "Team", "Projects", new { projectId = item.value.ProjectId }, new { @class = "btn" })
+                                    @Html.ActionLink( "Team", "Team", "Projects", new { projectId = item.value.ProjectId }, new { @class = "btn" })
                                 </div>
                             </div>
+                            <div class="row"></div>
 
                             <p>@Html.ActionLink("Editar proyecto", "SendProjecToEdit", "Projects", new { projectId = item.value.ProjectId }, new { @class = "btn btn-primary", @style = "color:white" })</p>
 
