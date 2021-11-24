@@ -6,19 +6,7 @@
 <div>
     <ul class="nav filters-style nav-pills ">
         <li class="nav-item">
-            <a class="nav-link">A</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link">E</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link">I</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link">O</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link">U</a>
+            <a class="nav-link">Todos</a>
         </li>
     </ul>
 </div>
@@ -27,10 +15,6 @@
     <div class="scrollbar">
         <div class="row projects-dashboard">
             @if (Model.Any())
-            {
-                <p>Eale</p>
-            }
-            else
             {
                 foreach (var item in Model.Select((value, index) => new { value, index }))
                 {
@@ -41,7 +25,7 @@
                                     <h3>@item.value.Title</h3>
                                 </div>
                                 <div class="row">
-                                    <p class="col-sm-3"> @item.value.OperatingSystem</p>
+                                    <p class="col-sm-3" @item.value.OperatingSystem</p>
                                     <p class="col-sm-3">@item.value.OSVersion</p>
                                     <p class="col-sm-3">@item.value.AppVersion</p>
                                     <p class="col-sm-3">@item.value.Status</p>
@@ -51,8 +35,18 @@
                     </div>
                 }
             }
-
-
+            else
+            {
+                <div class="bugs-column">
+                    <a class="link-style" href="@Url.Action("CreateBug", "Bugs", new {projectId = ViewBag.projectId })">
+                        <div class="card alert alert-danger">
+                            <div class="row">
+                                <div class="title-text">No hay bugs reportados!</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            }
         </div>
     </div>
     <a class="float" href="@Url.Action("CreateBug", "Bugs", new {projectId = ViewBag.projectId })"><p class="plus">+</p></a>

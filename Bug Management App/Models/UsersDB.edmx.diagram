@@ -4,15 +4,15 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="0e2c5db2341649d2b6a38ea03583d2a9" Name="Diagram1">
-        <EntityTypeShape EntityType="UsersDBModel.Bugs" Width="1.5" PointX="0.625" PointY="2.5" IsExpanded="true" />
+      <Diagram DiagramId="b05906ee49f24a08920ed332182e7061" Name="Diagram1">
+        <EntityTypeShape EntityType="UsersDBModel.Bugs" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="UsersDBModel.Projects" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="UsersDBModel.Roles" Width="1.5" PointX="10" PointY="2.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="UsersDBModel.Users" Width="1.5" PointX="5" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="UsersDBModel.UsersProjects" Width="1.5" PointX="6.875" PointY="1.5" IsExpanded="true" />
-        <AssociationConnector Association="UsersDBModel.FK__UsersProj__Proje__40F9A68C" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="UsersDBModel.Roles" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UsersDBModel.Users" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UsersDBModel.UsersProjects" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <AssociationConnector Association="UsersDBModel.FK__UsersProj__Proje__2DE6D218" ManuallyRouted="false" />
         <AssociationConnector Association="UsersDBModel.FK_UserID_CreatorID" ManuallyRouted="false" />
-        <AssociationConnector Association="UsersDBModel.FK__UsersProj__UserI__40058253" ManuallyRouted="false" />
+        <AssociationConnector Association="UsersDBModel.FK__UsersProj__UserI__2CF2ADDF" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
