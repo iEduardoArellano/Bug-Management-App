@@ -41,7 +41,7 @@ namespace Bug_Management_App.Repos
         public IEnumerable<Projects> GetProjectsCreatedByUser(int userId)
         {
             string query = "SELECT * FROM Projects WHERE Creator = @p0";
-            return _DB.Projects.SqlQuery(query, userId).DefaultIfEmpty();
+            return _DB.Projects.SqlQuery(query, userId);
         }
 
         public Users GetUserAtLogin(LoginUserDto loginUser)

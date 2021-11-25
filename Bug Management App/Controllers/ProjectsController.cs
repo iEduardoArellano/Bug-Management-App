@@ -90,9 +90,12 @@ namespace Bug_Management_App.Controllers
                 ProjectId = projectId
             };
             _users.SetUserToProject(userProject);
+
+
+
             _users.SaveChanges();
 
-            return RedirectToAction("Teams", new {projectId = userProject.ProjectId });
+            return RedirectToAction("Team", new {projectId = userProject.ProjectId });
         }
 
         [HttpPost]
